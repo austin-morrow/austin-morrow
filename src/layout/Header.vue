@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white">
       <a class="navbar-brand" href="#">
-        <img src="/path/to/logo.png" alt="Logo" class="logo">
+        <img src="../assets/images/header_logo.png" alt="Logo" class="logo">
       </a>
       <div class="ml-auto">
-        <button class="btn btn-outline-light" @click="toggleOverlay">MENU</button>
+        <button class="btn btn-dark" style="border-radius: 50px;" @click="toggleOverlay">MENU</button>
       </div>
     </nav>
 

@@ -38,7 +38,7 @@ export default {
 }
 
 .close-button {
-  padding: 5px;
+  padding: 50px 5px 5px 5px;
   background-color: transparent;
   border: none;
   color: white;
