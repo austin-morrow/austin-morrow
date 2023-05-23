@@ -2,23 +2,15 @@
   <div class="big-square-image">
     <div class="content">
       <div class="text-container">
-        <p class="upward-text">Your Text Here</p>
+        <p class="upward-text">morrow.austin5@gmail.com</p>
       </div>
 
       <img src="../assets/images/fulllogo.png" alt="Big Square Image">
 
       <div class="button-container">
-        <ul class="button-list">
-          <li>
-            <i class="bi bi-github"></i>
-          </li>
-          <li>
-            <i class="bi bi-linkedin"></i>
-          </li>
-          <li>
-            <i class="bi bi-twitter"></i>
-          </li>
-        </ul>
+            <i class="bi bi-github fs-4"></i>
+            <i class="bi bi-linkedin fs-4"></i>
+            <i class="bi bi-twitter fs-4"></i>
       </div>
     </div>
 
@@ -44,25 +36,27 @@
 }
 
 .text-container {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .upward-text {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  writing-mode: vertical-lr;
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.2;
+  transform: rotate(180deg); 
 }
 
 .button-container {
-  margin-right: 5px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.button-container button {
-  margin-left: 5px;
+.fs-4 {
+font-size: 30px;
 }
 
-.button-container button:first-child {
-  margin-left: 0;
-}
+
 </style>
