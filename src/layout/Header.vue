@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">
         <img src="../assets/images/header_logo.png" alt="Logo" class="logo">
       </a>
-      <div class="ml-auto">
+      <div class="ml-auto menu">
         <button class="btn btn-dark" style="border-radius: 50px;" @click="toggleOverlay">MENU</button>
       </div>
     </nav>
@@ -35,6 +35,12 @@ export default {
 
 <style>
 .logo {
-  height: 30px; /* Adjust the height as per your logo's size */
+  height: 40px;
+  padding-left: 5rem;
 }
+
+.menu {
+  padding-right: 5rem;
+}
+
 </style>
