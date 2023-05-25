@@ -1,41 +1,37 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white" style="padding-top: 20px; padding-bottom: 20px;">
       <a class="navbar-brand" href="#">
-        <img src="../assets/images/header_logo.png" alt="Logo" class="logo">
+        <img src="../assets/images/Personal Logo-5.png" alt="Logo" class="logo">
       </a>
+
+      <div class="navbar-text d-flex flex-fill justify-content-center">
+        <span class="navbar-text-item">Work</span>
+        <span class="navbar-text-item">Services</span>
+        <span class="navbar-text-item">Process</span>
+        <span class="navbar-text-item">About</span>
+      </div>
+
       <div class="ml-auto menu">
-        <button class="btn btn-dark" style="border-radius: 50px;" @click="toggleOverlay">MENU</button>
+        <button class="btn btn-dark" style="border-radius: 50px;">Get started</button>
       </div>
     </nav>
-
-    <Overlay v-if="showOverlay" @close="toggleOverlay" />
   </div>
 </template>
 
 <script>
-import Overlay from '../components/Overlay.vue';
-
 export default {
-  components: {
-    Overlay
-  },
+  components: {},
   data() {
-    return {
-      showOverlay: false
-    };
+    return {};
   },
-  methods: {
-    toggleOverlay() {
-      this.showOverlay = !this.showOverlay;
-    },
-  }
-}
+  methods: {},
+};
 </script>
 
 <style>
 .logo {
-  height: 40px;
+  height: 60px;
   padding-left: 5rem;
 }
 
@@ -43,4 +39,13 @@ export default {
   padding-right: 5rem;
 }
 
+.navbar-text {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  gap: 5rem;
+}
+
+.navbar-text-item {
+  color: black;
+}
 </style>
