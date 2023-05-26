@@ -1,18 +1,14 @@
 <template class="container">
-<div class="row">
-  <div class="col">
-<h2>Design</h2>
+  <div class="row">
+    <div class="col">
+      <h2>Design</h2>
+    </div>
+    <div class="col">
+      <h2>Develop</h2>
+    </div>
   </div>
-  <div class="col">
-<h2>Develop</h2>
-  </div>
-</div>
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-
-<style>
-</style>
+<style></style>

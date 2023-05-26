@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <router-view />
+    <Home />
     <Work />
     <Services />
   </div>
@@ -9,13 +9,15 @@
 
 <script>
 import Header from "../src/layout/Header.vue";
+import Home from "../src/views/Home.vue";
 import Work from "../src/views/Work.vue";
 import Services from "../src/views/Services.vue";
+
 
 export default {
   name: "App",
   components: {
-    Header, Work, Services
+    Header, Home, Work, Services
   },
 };
 </script>
