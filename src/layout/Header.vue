@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white" style="padding-top: 20px; padding-bottom: 20px;">
-      <a class="navbar-brand" href="#">
-        <img src="../assets/images/Personal Logo-5.png" alt="Logo" class="logo">
-      </a>
-
-      <div class="navbar-text d-flex flex-fill justify-content-center">
-        <span class="navbar-text-item">Work</span>
-        <span class="navbar-text-item">Services</span>
-        <span class="navbar-text-item">Process</span>
-        <span class="navbar-text-item">About</span>
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="padding-top: 20px; padding-bottom: 20px;">
+      <div class="menu"> 
+      <i class="bi bi-list"></i>
       </div>
 
-      <div class="ml-auto menu">
-        <button class="btn btn-dark" style="border-radius: 50px;">Get started</button>
+      <div class="navbar-text d-flex flex-fill justify-content-center">
+        <img src="../assets/images/dark_mode_logo.png" alt="Logo" class="navImage">
+      </div>
+
+      <div class="ml-auto contact">
+        <button class="btn btn-light" style="border-radius: 50px;">Get started</button>
       </div>
     </nav>
   </div>
@@ -30,22 +27,33 @@ export default {
 </script>
 
 <style>
-.logo {
-  height: 60px;
-  padding-left: 5rem;
-}
+
 
 .menu {
+  padding-left: 5rem;
+  font-size: 2rem;
+  color: #FDD427;
+}
+
+.contact {
   padding-right: 5rem;
 }
 
 .navbar-text {
   padding-left: 5rem;
   padding-right: 5rem;
-  gap: 5rem;
+}
+
+.navImage {
+  height: 200px;
+  width: auto;
 }
 
 .navbar-text-item {
   color: black;
+}
+
+.navbar {
+  background-color: #2b2b2b;
 }
 </style>
