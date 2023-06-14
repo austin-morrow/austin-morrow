@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="work">
     <h2 class="heading">Featured work</h2>
     <div class="container">
       <div class="row">
@@ -35,5 +35,9 @@
 .heading {
  padding-left: 50px;
  padding-bottom: 20px;
+}
+
+.work {
+  background-color: #2b2b2b;
 }
 </style>
