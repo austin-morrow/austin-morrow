@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="padding-top: 20px; padding-bottom: 20px;">
-      <div class="menu"> 
+    <nav class="navbar navbar-expand-lg" style="padding-top: 20px; padding-bottom: 20px;">
+      <div class="menu" @click="openMenu"> 
       <i class="bi bi-list"></i>
       </div>
 
@@ -22,7 +22,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    openMenu() {
+      console.log('im hit!');
+    }
+  },
 };
 </script>
 

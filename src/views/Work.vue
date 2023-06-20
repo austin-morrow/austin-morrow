@@ -35,6 +35,7 @@
 .heading {
  padding-left: 50px;
  padding-bottom: 20px;
+ color: white;
 }
 
 .work {
