@@ -1,6 +1,6 @@
 <template>
   <div class="big-square-image">
-    <h1 style="color: white">Some inspirational text</h1>
+    <h1 style="color: white">REALLY COOL WEBSITES</h1>
   </div>
 </template>
 
