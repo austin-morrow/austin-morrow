@@ -1,12 +1,11 @@
 <template>
-  <div class="big-square-image">
-    <h1 style="color: white">Some inspirational text</h1>
-    <router-link to="/contact">CONTACT FORM</router-link>
+  <div class="contact">
+    <h1 style="color: white">Contact</h1>
   </div>
 </template>
 
 <style scoped>
-.big-square-image {
+.contact {
   display: flex;
   justify-content: center;
   align-items: center;
