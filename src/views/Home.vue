@@ -4,7 +4,9 @@
     <div class="text-container">
       <h2 class="text">New Website</h2>
     </div>
-    
+    <div>
+      <img class="construction" src="../assets/images/under_construction.png" alt="Under Constructions">
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #2b2b2b;
+  background-color: #171717;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
@@ -26,6 +28,11 @@
   max-width: 450px; 
   display: block;
   margin-bottom: 10px;
+}
+
+.construction {
+ width: 800px;
+  display: block;
 }
 
 .text-container {
