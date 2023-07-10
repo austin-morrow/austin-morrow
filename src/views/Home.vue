@@ -2,7 +2,7 @@
   <div class="logo-container">
     <img class="logo" src="../assets/images/logo_no_bg.png" alt="Logo" />
     <div class="text-container">
-      <h2 class="text">New Website</h2>
+      <h2 class="new-website">New Website</h2>
     </div>
     <div>
       <img
@@ -17,6 +17,14 @@
         src="../assets/images/banner.png"
         alt="Under Constructions"
       />
+    </div>
+    <div>
+      <div class="text">CONTACT FORM</div>
+    </div>
+    <div class="icons">
+      <i class="bi bi-github"></i>
+      <i class="bi bi-linkedin"></i>
+      <i class="bi bi-twitter"></i>
     </div>
   </div>
 </template>
@@ -50,16 +58,27 @@
   text-align: center;
 }
 
-.text {
+.new-website {
   padding-top: 50px;
   color: #fff;
   font-size: 70px;
   font-family: "Marck Script", cursive;
 }
 
+.text {
+  padding-top: 20px;
+  color: #fff;
+  text-decoration: underline;
+}
+
 .banner {
   width: 250px;
   display: block;
   padding-top: 60px;
+}
+
+.bi {
+  color: #fff;
+  row-gap: 10px;
 }
 </style>
