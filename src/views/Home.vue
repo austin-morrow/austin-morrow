@@ -77,8 +77,11 @@
   padding-top: 60px;
 }
 
-.bi {
-  color: #fff;
-  row-gap: 10px;
-}
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    color: #fff;
+    padding-top: 20px;
+  }
 </style>
