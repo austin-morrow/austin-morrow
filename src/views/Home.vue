@@ -1,11 +1,22 @@
 <template>
   <div class="logo-container">
-    <img class="logo" src="../assets/images/dark_mode_logo.png" alt="Logo">
+    <img class="logo" src="../assets/images/logo_no_bg.png" alt="Logo" />
     <div class="text-container">
       <h2 class="text">New Website</h2>
     </div>
     <div>
-      <img class="construction" src="../assets/images/under_construction.png" alt="Under Constructions">
+      <img
+        class="construction"
+        src="../assets/images/temp_logo.png"
+        alt="Under Constructions"
+      />
+    </div>
+    <div>
+      <img
+        class="banner"
+        src="../assets/images/banner.png"
+        alt="Under Constructions"
+      />
     </div>
   </div>
 </template>
@@ -20,18 +31,18 @@
   background-color: #171717;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
 }
 
 .logo {
-  max-width: 450px; 
+  max-width: 500px;
   display: block;
   margin-bottom: 10px;
 }
 
 .construction {
- width: 800px;
+  width: 800px;
   display: block;
 }
 
@@ -42,7 +53,13 @@
 .text {
   padding-top: 50px;
   color: #fff;
-  font-size: 50px;
+  font-size: 70px;
+  font-family: "Marck Script", cursive;
+}
+
+.banner {
+  width: 250px;
+  display: block;
+  padding-top: 60px;
 }
 </style>
-
