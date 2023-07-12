@@ -23,9 +23,9 @@
       <div class="text"><a href="https://austin-morrow1.hecticshare.com/public/austin-morrow1/discovery-form---new-website">CONTACT FORM</a></div>
     </div>
     <div class="icons">
-      <i class="bi bi-github"></i>
-      <i class="bi bi-linkedin"></i>
-      <i class="bi bi-twitter"></i>
+      <a href="https://github.com/agmorrow" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/agmorrow/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://twitter.com/agmorrow_" target="_blank"><i class="bi bi-twitter"></i></a>
     </div>
   </div>
 </template>
