@@ -11,15 +11,16 @@
         alt="Under Constructions"
       />
     </div>
-    <div>
+    <div><a href="http://austinmorrow.me" target="_blank">
       <img
         class="banner"
         src="../assets/images/banner.png"
         alt="Under Constructions"
       />
+    </a>
     </div>
     <div>
-      <div class="text">CONTACT FORM</div>
+      <div class="text"><a href="https://austin-morrow1.hecticshare.com/public/austin-morrow1/discovery-form---new-website">CONTACT FORM</a></div>
     </div>
     <div class="icons">
       <i class="bi bi-github"></i>
@@ -77,8 +78,11 @@
   padding-top: 60px;
 }
 
-.bi {
-  color: #fff;
-  row-gap: 10px;
-}
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    color: #fff;
+    padding-top: 20px;
+  }
 </style>
