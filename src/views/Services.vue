@@ -1,18 +1,20 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="service-content">
-          <div class="icon-box design-icon"></div>
-          <h2 class="services">Design</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat expedita pariatur enim ex consectetur dicta quidem quis doloribus quaerat, adipisci quisquam illo a quia accusantium!</p>
+  <div class="custom-container">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="custom-column">
+            <div class="square"></div>
+            <h1>Design</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta impedit illo ad aliquam distinctio fugiat dolore cum doloribus tempore beatae, illum quo error sapiente quam voluptates molestias hic quos alias..</p>
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="service-content">
-          <div class="icon-box develop-icon"></div>
-          <h2 class="services">Develop</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sequi officiis totam repudiandae, vitae in id excepturi alias quis facere saepe qui voluptatem, et cumque.</p>
+        <div class="col-md-6">
+          <div class="custom-column">
+            <div class="square"></div>
+            <h1>Develop</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus tenetur, corporis hic, officiis in excepturi voluptatibus ipsam asperiores iure obcaecati animi eius! Totam facilis numquam cupiditate similique ratione, placeat et..</p>
+          </div>
         </div>
       </div>
     </div>
@@ -20,57 +22,39 @@
 </template>
 
 <script>
-// Add any JavaScript logic here if needed
+export default {
+  // Your Vue component logic goes here
+};
 </script>
 
-<style>
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Hide horizontal scrollbar if present */
-  background-color: #2b2b2b; /* Set background color for the entire page */
+<style scoped>
+.custom-container {
+  background-color: #2b2b2b;
+  padding: 20px; /* Add padding to separate content from the edges if desired */
+  width: 100%; /* Set the width to 100% to cover the entire viewport */
 }
 
-.container {
-  padding-top: 100px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-around;
-}
-
-.col {
+.custom-column {
   color: white;
   text-align: left;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  position: relative; /* To position the squares relative to the column */
 }
 
-.service-content {
+.square {
+  top: -30px; /* Adjust the positioning based on your preference */
+  left: 10px; /* Align the square to the left */
+  width: 70px; /* Make the square a little bigger */
+  height: 70px; /* Make the square a little bigger */
+  background-color: #fff; /* You can set any color you like for the squares */
+  border-radius: 10px; /* Adjust the border radius to control the roundness */
+}
+
+.custom-column h1 {
+  /* Add any custom styles for the header if needed */
+}
+
+.custom-column p {
   text-align: left;
-}
-
-.icon-box {
-  width: 80px;
-  height: 80px;
-  background-color: #ffffff;
-  border-radius: 10px; /* Use a border radius to create square corners */
-  margin-bottom: 15px;
-}
-
-.design-icon {
-  /* Add any specific styles for the design icon here */
-}
-
-.develop-icon {
-  /* Add any specific styles for the develop icon here */
-}
-
-.services {
-  padding-left: 0;
- 
 }
 </style>
