@@ -29,6 +29,6 @@
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-  height: 500px;
+  height: 600px;
 }
 </style>
