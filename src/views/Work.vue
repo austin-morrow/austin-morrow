@@ -1,6 +1,6 @@
 <template>
   <div class="work">
-    <h2 class="heading">Featured work</h2>
+    <h2 class="heading">FEATURED WORK</h2>
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-6">
@@ -39,6 +39,6 @@
 }
 
 .work {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
 }
 </style>

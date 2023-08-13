@@ -12,7 +12,7 @@
   height: 100vh;
   padding: 5px;
   box-sizing: border-box;
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
 }
 
 

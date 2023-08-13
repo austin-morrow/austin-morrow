@@ -6,7 +6,7 @@
       </div>
 
       <div class="navbar-text d-flex flex-fill justify-content-center">
-        <img src="../assets/images/dark_mode_logo.png" alt="Logo" class="navImage">
+        <img src="../assets/images/logo_no_bg_lg.png" alt="Logo" class="navImage">
       </div>
 
       <div class="ml-auto contact">
@@ -58,6 +58,6 @@ export default {
 }
 
 .navbar {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
 }
 </style>

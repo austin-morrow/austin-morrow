@@ -14,7 +14,7 @@
 <style>
 /* Add this style to your component */
 .custom-container {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
   display: flex;
   justify-content: center; /* Horizontally center the row content */
   align-items: center; /* Vertically center the row content */

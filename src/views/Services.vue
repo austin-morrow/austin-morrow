@@ -5,14 +5,14 @@
         <div class="col-md-6">
           <div class="custom-column">
             <div class="square"></div>
-            <h1>Design</h1>
+            <h1>DESIGN</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta impedit illo ad aliquam distinctio fugiat dolore cum doloribus tempore beatae, illum quo error sapiente quam voluptates molestias hic quos alias..</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="custom-column">
             <div class="square"></div>
-            <h1>Develop</h1>
+            <h1>DEVELOP</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus tenetur, corporis hic, officiis in excepturi voluptatibus ipsam asperiores iure obcaecati animi eius! Totam facilis numquam cupiditate similique ratione, placeat et..</p>
           </div>
         </div>
@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .custom-container {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
   padding: 20px; /* Add padding to separate content from the edges if desired */
   width: 100%; /* Set the width to 100% to cover the entire viewport */
 }

@@ -29,6 +29,6 @@ export default {
 
 <style>
 .contact {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
 }
 </style>

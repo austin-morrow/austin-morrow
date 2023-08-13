@@ -21,7 +21,9 @@
 
 <style scoped>
 .container-fluid {
-  background-color: #2b2b2b;
+  background-color: #1f1f1f;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 .header {
 color: white;
