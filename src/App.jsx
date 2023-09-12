@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Work from './pages/Work';
 import Services from './pages/Services';
-
+import Process from './pages/Process';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
    <Header />
    <Work />
    <Services />
+   <Process />
     </>
   )
 }
