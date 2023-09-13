@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Work from './pages/Work';
 import Services from './pages/Services';
 import Process from './pages/Process';
+import About from './pages/About';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
    <Work />
    <Services />
    <Process />
+   <About />
     </>
   )
 }

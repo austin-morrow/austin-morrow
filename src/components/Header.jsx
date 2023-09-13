@@ -107,8 +107,7 @@ export default function Header() {
               Front End Developer from Denver, CO
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-400">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Creating custom websites for creatives and small businesses
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
