@@ -3,6 +3,7 @@ import Work from './pages/Work';
 import Services from './pages/Services';
 import Process from './pages/Process';
 import About from './pages/About';
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
    <Services />
    <Process />
    <About />
+   <Contact />
     </>
   )
 }
