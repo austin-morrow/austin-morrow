@@ -31,7 +31,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-[500px]">
+    <div name="contact" className="w-full min-h-[500px]">
       <iframe
         id="hectic-form"
         allowtransparency="true"

@@ -22,7 +22,7 @@ const processSteps = [
 
 export default function Process() {
   return (
-    <div className="bg-primary-black py-24 sm:py-32">
+    <div name="process" className="bg-primary-black py-24 sm:py-32">
       <div className="flex items-center justify-center">
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <div className="col-span-1">

@@ -3,13 +3,14 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import PrimaryLogo from '../assets/images/logo_no_bg_lg.png'
 import SecondaryLogo from '../assets/images/secondary_logo.png'
+import { Link } from 'react-scroll';
 
 const navigation = [
-  { name: 'Work', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Process', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Work', to: 'work', current: true },
+  { name: 'Services', to: 'services', current: false },
+  { name: 'Process', to: 'process', current: false },
+  { name: 'About', to: 'about',current: false },
+  { name: 'Contact', to: 'contact', current: false },
 ]
 
 export default function Header() {
@@ -31,13 +32,11 @@ export default function Header() {
           </div>
         
           <div className="hidden lg:flex lg:gap-x-12">
-            <a>
               <img
               className="h-40"
               src={PrimaryLogo}
               alt=""
               />
-            </a>
           </div>
           <div className="lg:flex lg:flex-1 lg:justify-end">
           <a
@@ -73,13 +72,16 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      as="a"
+                      to={item.to}
+                      smooth="true"
+                      duration={500}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-neutral-800"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
