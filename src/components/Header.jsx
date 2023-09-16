@@ -1,25 +1,31 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import PrimaryLogo from '../assets/images/logo_no_bg_lg.png'
-import SecondaryLogo from '../assets/images/secondary_logo.png'
-import { Link } from 'react-scroll';
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
+import SecondaryLogo from "../assets/images/secondary_logo.png";
+import { Link } from "react-scroll";
 
 const navigation = [
-  { name: 'Work', to: 'work', current: true },
-  { name: 'Services', to: 'services', current: false },
-  { name: 'Process', to: 'process', current: false },
-  { name: 'About', to: 'about',current: false },
-  { name: 'Contact', to: 'contact', current: false },
-]
+  { name: "Work", to: "work", current: true },
+  { name: "Services", to: "services", current: false },
+  { name: "Process", to: "process", current: false },
+  { name: "About", to: "about", current: false },
+  { name: "Contact", to: "contact", current: false },
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="bg-primary-black">
-     <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <header className="absolute inset-x-0 top-0 z-50">
+        <nav
+          className="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <button
               type="button"
@@ -30,35 +36,28 @@ export default function Header() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-        
+
           <div className="hidden lg:flex lg:gap-x-12">
-              <img
-              className="h-40"
-              src={PrimaryLogo}
-              alt=""
-              />
+            <img className="h-40" src={PrimaryLogo} alt="" />
           </div>
           <div className="lg:flex lg:flex-1 lg:justify-end">
-          <a
-                href="#"
-                className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Contact
-              </a>
+            <Link
+              to="contact"
+              smooth={true} duration={500}
+              className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Contact
+            </Link>
           </div>
         </nav>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="bg-neutral-900 fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+              <div className="-m-1.5 p-1.5">
                 <span className="sr-only">Austin Morrow</span>
-                <img
-                  className="h-8 w-auto"
-                  src={SecondaryLogo}
-                  alt=""
-                />
-              </a>
+                <img className="h-8 w-auto" src={SecondaryLogo} alt="" />
+              </div>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-400"
@@ -79,6 +78,7 @@ export default function Header() {
                       smooth="true"
                       duration={500}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-neutral-800"
+                      onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
@@ -112,15 +112,22 @@ export default function Header() {
               Creating custom websites for creatives and small businesses
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <Link
+                to="contact"
+                smooth="true"
+                duration={500}
                 className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-400">
+              </Link>
+              <Link
+                to="work"
+                smooth="true"
+                duration={500}
+                className="text-sm font-semibold leading-6 text-gray-400"
+              >
                 View work <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -138,5 +145,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }
