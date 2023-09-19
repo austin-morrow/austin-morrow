@@ -9,6 +9,9 @@ export default {
       colors: {
         'primary-gold': '#FDD427',
         'primary-black': '#1F1F1F'
+      },
+      backgroundImage: {
+        'footer-texture': "url('/assets/images/IMG-8130.jpg')"
       }
     },
   },
