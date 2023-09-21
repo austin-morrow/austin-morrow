@@ -1,39 +1,24 @@
-import React from "react";
+import React from 'react';
 import AboutImg from "../assets/images/about-img.png";
 
 export default function About() {
   return (
-    <div name="about" className="w-full py-24 sm:py-32 pt-12 bg-primary-black text-white">
-      <div className="flex flex-col justify-center items-center w-full h-full">
-        <div className="max-w-[1000px] w-full grid grid-cols-2"></div>
-        <div className="max-w-[900px] w-full grid sm:grid-cols-2 gap-1 px-1">
-          <div className="text-white">
-            <div className="pb-14 pl-4">
-              <h1 className="text-4xl font-bold">A LITTLE ABOUT ME</h1>
-            </div>
-            <p>
-              Hi there, I'm Austin. I am a web developer based in Denver, CO. I
-              love building and designing web applications. With a background in
-              non-profit work, I have always looked for ways to empower
-              individuals and share stories. I have found that web development
-              is more than just building a website and hosting it online. I see
-              the design and functionality of a website shows a little taste of
-              who an individual or company is, and that can be enough for people
-              to want to invest in.<br></br>
-              <br></br>I am experienced in building full stack web applications
-              and love learning new technologies. My goal is to help people and
-              companies share their story and to have a little fun along the
-              way.
-            </p>
-          </div>
-          <div>
-            <img
-              src={AboutImg}
-              alt="portrait"
-              className="h-4/5 shadow-md shadow-[#040c16] rounded-lg"
-            />
-          </div>
-        </div>
+    <div className="bg-primary-black p-8 flex flex-col md:flex-row md:px-24 lg:px-48">
+      {/* text */}
+      <div className="md:w-1/2 md:pr-4">
+        <h2 className="text-2xl font-bold mb-4 text-white">About Me</h2>
+        <p className="text-gray-200">
+        I'm [Your Name], a Denver-based front-end web developer with a passion for transforming ideas into visually stunning and user-friendly digital experiences. My journey into web development began with a simple curiosity, and it has since evolved into a career where I combine my artistic sensibilities with technical skills to create captivating websites. My current work involves [briefly describe your current work or role], where I [mention your responsibilities or projects]. In addition to my current role, I also work with a diverse range of freelance clients and engage in exciting side projects that allow me to continually push the boundaries of web development. With expertise in responsive design, user experience optimization, and proficiency in modern web technologies like HTML5, CSS3, JavaScript, and popular libraries such as React and Vue.js, I'm committed to delivering websites that not only meet but exceed your expectations. I believe in open communication, attention to detail, and timely project delivery, and I'm excited to collaborate with you on your next web development endeavor. Let's turn your vision into a digital reality.
+
+        </p>
+      </div>
+      {/* image */}
+      <div className="md:w-1/2 py-6">
+        <img
+          src={AboutImg}
+          alt="Image"
+          className="rounded-lg w-full"
+        />
       </div>
     </div>
   );
