@@ -10,7 +10,6 @@ const navigation = [
   { name: "Services", to: "services", current: false },
   { name: "Process", to: "process", current: false },
   { name: "About", to: "about", current: false },
-  { name: "Contact", to: "contact", current: false },
 ];
 
 export default function Header() {
@@ -43,8 +42,9 @@ export default function Header() {
           <div className="lg:flex lg:flex-1 lg:justify-end">
             <Link
               to="contact"
-              smooth={true} duration={500}
-              className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              smooth={true}
+              duration={500}
+              className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Contact
             </Link>
@@ -77,12 +77,23 @@ export default function Header() {
                       to={item.to}
                       smooth="true"
                       duration={500}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-neutral-800"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white cursor-pointer hover:bg-neutral-800"
                       onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
                   ))}
+                  <div className="pt-4">
+                    <Link
+                      to="contact"
+                      smooth={true}
+                      duration={500}
+                      className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      onClick={closeMobileMenu}
+                    >
+                      Contact
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -116,7 +127,7 @@ export default function Header() {
                 to="contact"
                 smooth="true"
                 duration={500}
-                className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </Link>
@@ -124,7 +135,7 @@ export default function Header() {
                 to="work"
                 smooth="true"
                 duration={500}
-                className="text-sm font-semibold leading-6 text-gray-400"
+                className="text-sm font-semibold cursor-pointer leading-6 text-gray-400"
               >
                 View work <span aria-hidden="true">→</span>
               </Link>
@@ -145,6 +156,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-    
   );
 }
