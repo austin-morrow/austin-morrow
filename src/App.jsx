@@ -7,6 +7,7 @@ import Process from './pages/Process';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Process />
           <About />
           <Contact />
+          <ScrollToTopButton />
         </>} />
         <Route path="/pricing" element={<Pricing />} />
       </Routes>

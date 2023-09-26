@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
 import { Link } from "react-scroll";
@@ -44,7 +44,7 @@ export default function Header() {
               to="contact"
               smooth={true}
               duration={500}
-              className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Contact
             </Link>
@@ -88,7 +88,7 @@ export default function Header() {
                       to="contact"
                       smooth={true}
                       duration={500}
-                      className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       onClick={closeMobileMenu}
                     >
                       Contact
@@ -127,7 +127,7 @@ export default function Header() {
                 to="contact"
                 smooth="true"
                 duration={500}
-                className="rounded-md bg-primary-gold px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </Link>
@@ -135,9 +135,9 @@ export default function Header() {
                 to="work"
                 smooth="true"
                 duration={500}
-                className="text-sm font-semibold cursor-pointer leading-6 text-gray-400"
+                className="group text-sm font-semibold cursor-pointer leading-6 text-gray-400 flex flex-row items-center"
               >
-                View work <span aria-hidden="true">→</span>
+                View work <span className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300" aria-hidden="true"><ArrowRightIcon /></span>
               </Link>
             </div>
           </div>
