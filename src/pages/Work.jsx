@@ -1,36 +1,36 @@
-import React from 'react';
+import React from "react";
+import CMImg from "../assets/images/cm-project.png";
 
-const ProjectBox = ({ imageUrl, title, description }) => {
+const ProjectBox = ({ imageUrl }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md h-64">
-      <img src={imageUrl} alt={title} className="w-16 h-16 mb-4" />
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="bg-white  rounded-lg shadow-md h-80 flex flex-col justify-center items-center">
+      <img src={imageUrl} alt="Project Image" className="w-64 h-48" />
     </div>
   );
 };
 
+
 const Work = () => {
   const projects = [
     {
-      imageUrl: 'image1.jpg',
-      title: 'Project 1',
-      description: 'Description for Project 1',
+      imageUrl: CMImg,
+      title: "Project 1",
+      description: "Description for Project 1",
     },
     {
-      imageUrl: 'image2.jpg',
-      title: 'Project 2',
-      description: 'Description for Project 2',
+      imageUrl: "image2.jpg",
+      title: "Project 2",
+      description: "Description for Project 2",
     },
     {
-      imageUrl: 'image3.jpg',
-      title: 'Project 3',
-      description: 'Description for Project 3',
+      imageUrl: "image3.jpg",
+      title: "Project 3",
+      description: "Description for Project 3",
     },
     {
-      imageUrl: 'image4.jpg',
-      title: 'Project 4',
-      description: 'Description for Project 4',
+      imageUrl: "image4.jpg",
+      title: "Project 4",
+      description: "Description for Project 4",
     },
   ];
 
