@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  XMarkIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
 import { Link } from "react-scroll";
+import Menu from "../assets/images/menu.png";
 
 const navigation = [
   { name: "Work", to: "work", current: true },
@@ -32,7 +36,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <img className="h-5 w-9" src={Menu} alt="" aria-hidden="true" />
             </button>
           </div>
 
@@ -44,9 +48,9 @@ export default function Header() {
               to="contact"
               smooth={true}
               duration={500}
-              className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="outline outline-2 border-3 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-primary-black py-2 px-4 rounded-lg"
             >
-              Contact
+              Let's chat
             </Link>
           </div>
         </nav>
@@ -60,11 +64,11 @@ export default function Header() {
               </div>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-400"
+                className="-m-2.5 rounded-md p-2.5 text-yellow-400"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                <XMarkIcon className="h-8 w-" aria-hidden="true" />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -88,10 +92,10 @@ export default function Header() {
                       to="contact"
                       smooth={true}
                       duration={500}
-                      className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm cursor-pointer font-semibold text-primary-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="outline outline-2 border-3 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-primary-black py-2 px-4 rounded-lg"
                       onClick={closeMobileMenu}
                     >
-                      Contact
+                      Let's chat
                     </Link>
                   </div>
                 </div>
@@ -119,7 +123,7 @@ export default function Header() {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Front End Developer from Denver, CO
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-400">
+            <p className="mt-6 text-lg leading-8 text-primary-light-gray">
               Creating custom websites for creatives and small businesses
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -127,7 +131,7 @@ export default function Header() {
                 to="contact"
                 smooth="true"
                 duration={500}
-                className="rounded-md bg-gold-400 px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-yellow-400 px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </Link>
@@ -135,9 +139,15 @@ export default function Header() {
                 to="work"
                 smooth="true"
                 duration={500}
-                className="group text-sm font-semibold cursor-pointer leading-6 text-gray-400 flex flex-row items-center"
+                className="group text-sm font-semibold cursor-pointer leading-6 text-primary-light-gray hover:text-yellow-400 flex flex-row items-center"
               >
-                View work <span className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300" aria-hidden="true"><ArrowRightIcon /></span>
+                View work{" "}
+                <span
+                  className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300"
+                  aria-hidden="true"
+                >
+                  <ArrowRightIcon />
+                </span>
               </Link>
             </div>
           </div>
