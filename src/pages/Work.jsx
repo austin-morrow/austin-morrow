@@ -3,8 +3,8 @@ import CMImg from "../assets/images/cm-project.png";
 
 const ProjectBox = ({ imageUrl }) => {
   return (
-    <div className="bg-white  rounded-lg shadow-md h-80 flex flex-col justify-center items-center">
-      <img src={imageUrl} alt="Project Image" className="w-64 h-48" />
+    <div className="bg-primary-light-gray rounded-lg shadow-md h-80 flex flex-col justify-center items-center hover:-translate-y-1.5 hover:cursor-pointer hover:scale-100 duration-300">
+      <img src={imageUrl} alt="Project Image" className="w-3/5 h-4/5" />
     </div>
   );
 };
@@ -44,10 +44,10 @@ const Work = () => {
   ));
 
   return (
-    <div name="work" className="bg-primary-black">
+    <div name="work" className="bg-primary-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-white">
-          WORK
+        <h2 className="text-2xl font-bold tracking-tight text-primary-black">
+          Work
         </h2>
 
         <div className="container mx-auto py-8">
