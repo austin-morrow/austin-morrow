@@ -24,24 +24,13 @@ export default function Header() {
 
   return (
     <div className="bg-primary-black">
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="absolute left-0 right-0 top-2 z-40 pt-14">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <div className="flex lg:flex-1">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <img className="h-5 w-9" src={Menu} alt="" aria-hidden="true" />
-            </button>
-          </div>
-
           <div className="hidden lg:flex lg:gap-x-12">
-            <img className="h-40" src={PrimaryLogo} alt="" />
+            <img className="h-32" src={PrimaryLogo} alt="" />
           </div>
           <div className="lg:flex lg:flex-1 lg:justify-end">
             <Link
@@ -53,10 +42,20 @@ export default function Header() {
               Let's chat
             </Link>
           </div>
+          <div className="flex lg:flex-1">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <img className="h-5 w-9" src={Menu} alt="" aria-hidden="true" />
+            </button>
+          </div>
         </nav>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="bg-neutral-900 fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <Dialog.Panel className="bg-neutral-900 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <div className="-m-1.5 p-1.5">
                 <span className="sr-only">Austin Morrow</span>
@@ -87,6 +86,7 @@ export default function Header() {
                       {item.name}
                     </Link>
                   ))}
+                  <div class="border-t border-gray-300 my-4"></div>
                   <div className="pt-4">
                     <Link
                       to="contact"
