@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -11,6 +12,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 function App() {
   return (
     <Router>
+     <Analytics />
       <Routes>
         <Route path="/" element={<>
           <Header />
