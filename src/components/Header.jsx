@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import {
-  XMarkIcon,
-  Bars2Icon,
-} from "@heroicons/react/24/outline";
+import { XMarkIcon, Bars2Icon } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
-import { Link } from 'react-router-dom';
-
+import Instagram from "../assets/images/instagram.png";
+import Twitter from "../assets/images/twitter.png";
+import LinkedIn from "../assets/images/linkedin.png";
+import GitHub from "../assets/images/github.png";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
@@ -29,10 +29,8 @@ export default function Header() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-none flex items-center justify-between">
               <div>
-              <Link 
-              to="/"
-              >
-                <img className="h-28" src={PrimaryLogo} alt="" />
+                <Link to="/">
+                  <img className="h-28" src={PrimaryLogo} alt="" />
                 </Link>
               </div>
 
@@ -89,7 +87,8 @@ export default function Header() {
                     </Link>
                   ))}
                   <div className="border-t border-gray-300 my-4"></div>
-                  <div className="pt-4">
+                  <div className="flex flex-row items-center justify-between pt-4">
+                  <div>
                     <Link
                       to="contact"
                       className="outline outline-2 border-3 border-primary-white text-primary-white hover:bg-primary-white hover:text-primary-black py-2 px-4 rounded-full"
@@ -98,13 +97,30 @@ export default function Header() {
                       Let's chat
                     </Link>
                   </div>
+
+                  <div className="flex items-center">
+                    <div className=" flex flex-row gap-x-4 text-primary-light-gray">
+                      <div>
+                        <img className="h-6" src={Instagram} alt="" />
+                      </div>
+                      <div>
+                        <img className="h-6" src={Twitter} alt="" />
+                      </div>
+                      <div>
+                        <img className="h-6" src={LinkedIn} alt="" />
+                      </div>
+                      <div>
+                        <img className="h-6" src={GitHub} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>
           </Dialog.Panel>
         </Dialog>
       </header>
-
     </div>
   );
 }
