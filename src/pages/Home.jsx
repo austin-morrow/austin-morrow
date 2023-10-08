@@ -1,7 +1,8 @@
 import React from "react";
 import CMImg from "../assets/images/cm-project.png";
 import CMLogo from "../assets/images/cm-logo.png";
-import ServicesImg from "../assets/images/services.jpg";
+import Services from "../assets/images/nick-fewings.jpg";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import { Link } from 'react-router-dom';
 import {
   ArrowRightIcon,
@@ -90,19 +91,57 @@ const Home = () => {
     },
   ];
 
-  const projectBoxes = projects.map((project, index) => (
-    <ProjectBox
-      key={index}
-      imageUrl={project.imageUrl}
-      title={project.title}
-      description={project.description}
-    />
-  ));
+  const posts = [
+    {
+      id: 1,
+      title: 'Boost your conversion rate',
+      href: '#',
+      description:
+        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      author: {
+        name: 'Michael Foster',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+    {
+      id: 2,
+      title: 'Boost your conversion rate',
+      href: '#',
+      description:
+        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      author: {
+        name: 'Michael Foster',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+    {
+      id: 3,
+      title: 'Boost your conversion rate',
+      href: '#',
+      description:
+        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      author: {
+        name: 'Michael Foster',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+  ]
+
+ 
 
   return (
     <div className="bg-primary-black">
      <div className="w-full flex-auto">
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:py-56 lg:px-8 mt-14 sm:mt-0 justify-start">
+        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-24 lg:py-24 lg:px-8 mt-14 sm:mt-0 justify-start">
           <div className="max-w-2xl py-24">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Front End Developer from Denver, CO
@@ -136,22 +175,56 @@ const Home = () => {
 
 
       {/* Works */}
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-primary-black">
-          Work
-        </h2>
-
-        <div className="container mx-auto py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-            {projectBoxes}
-          </div>
+      <div id="works" className="bg-primary-black py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:mx-0">
+        <h2 className="text-base font-semibold leading-7 text-yellow-400">
+                  Deploy faster
+                </h2>
+                <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
+                  Works
+                </p>
+                <p className="mt-6 text-lg leading-8 text-primary-light-gray">
+                Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+                Suspendisse eget egestas a elementum pulvinar et feugiat blandit
+                at. In mi viverra elit nunc.
+              </p>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {posts.map((post) => (
+            <article key={post.id} className="bg-red-400 flex max-w-xl flex-col items-start justify-between">
+          
+              <div className="group relative">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <a href={post.href}>
+                    <span className="absolute inset-0" />
+                    {post.title}
+                  </a>
+                </h3>
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
+              </div>
+              <div className="relative mt-8 flex items-center gap-x-4">
+                <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                <div className="text-sm leading-6">
+                  <p className="font-semibold text-gray-900">
+                    <a href={post.author.href}>
+                      <span className="absolute inset-0" />
+                      {post.author.name}
+                    </a>
+                  </p>
+                  <p className="text-gray-600">{post.author.role}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
+    </div>
 
       {/* Review */}
-      <section className="relative isolate overflow-hidden bg-primary-black px-6 py-24 sm:py-32 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-primary-gray px-6 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <figure className="mt-10">
+          <figure>
             <blockquote className="text-center text-xl font-semibold leading-8 text-primary-white sm:text-2xl sm:leading-9">
               <p>
                 “Austin did a fantastic job on our website for Centurion
@@ -224,19 +297,19 @@ const Home = () => {
               </div>
             </div>
             <img
-              src={ServicesImg}
-              alt="Product screenshot"
-              className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[24rem] md:-ml-4 lg:-ml-0"
-              width={2432}
-              height={1442}
-            />
+            src={Services}
+            alt="Product screenshot"
+            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            width={2432}
+            height={1442}
+          />
           </div>
         </div>
       </div>
 
       {/* Process */}
-      <div className="bg-primary-black py-24 sm:py-32">
-        <div className="bg-primary-white p-12">
+      <div className="relative mx-auto max-w-7xl py-16 md:px-6 bg-primary-black">
+        <div className="bg-primary-white p-20 sm:rounded-3xl">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-base font-semibold leading-7 text-yellow-400">
@@ -274,6 +347,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };

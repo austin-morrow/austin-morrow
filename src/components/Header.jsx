@@ -25,11 +25,15 @@ export default function Header() {
   return (
     <div className="bg-primary-black">
       <header>
-        <div className="absolute left-0 right-0 top-2 z-40 pt-14">
+        <div className="sticky left-0 right-0 top-2 z-40 pt-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-none flex items-center justify-between">
               <div>
+              <Link 
+              to="/"
+              >
                 <img className="h-28" src={PrimaryLogo} alt="" />
+                </Link>
               </div>
 
               <div className="flex items-center gap-x-8">

@@ -26,7 +26,7 @@ function ScrollToTopButton() {
     <>
       {isVisible && (
         <button
-          className="fixed bottom-4 right-4 bg-gold-400 text-primary-black p-2 rounded-full shadow-md"
+          className="fixed bottom-4 right-4 bg-yellow-400 text-primary-black p-2 rounded-full shadow-md"
           onClick={handleScrollToTop}
         >
           <ArrowUpIcon className="w-6 h-6" />
