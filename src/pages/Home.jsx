@@ -2,7 +2,9 @@ import React from "react";
 import CMImg from "../assets/images/cm-project.png";
 import CMLogo from "../assets/images/cm-logo.png";
 import ServicesImg from "../assets/images/services.jpg";
+import { Link } from 'react-router-dom';
 import {
+  ArrowRightIcon,
   ServerIcon,
   CodeBracketSquareIcon,
   RectangleGroupIcon,
@@ -11,6 +13,7 @@ import {
   DocumentTextIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/20/solid";
+
 
 const ProjectBox = ({ imageUrl }) => {
   return (
@@ -36,11 +39,6 @@ const Home = () => {
       imageUrl: "image3.jpg",
       title: "Project 3",
       description: "Description for Project 3",
-    },
-    {
-      imageUrl: "image4.jpg",
-      title: "Project 4",
-      description: "Description for Project 4",
     },
   ];
 
@@ -103,6 +101,40 @@ const Home = () => {
 
   return (
     <div className="bg-primary-black">
+     <div className="w-full flex-auto">
+        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:py-56 lg:px-8 mt-14 sm:mt-0 justify-start">
+          <div className="max-w-2xl py-24">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Front End Developer from Denver, CO
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-primary-light-gray">
+              Creating custom websites for creatives and small businesses
+            </p>
+            <div className="mt-10 flex items-center justify-start gap-x-6">
+              <Link
+                to="contact"
+                className="rounded-full bg-yellow-400 px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </Link>
+              <Link
+                to="works"
+                className="group text-sm font-semibold cursor-pointer leading-6 text-primary-light-gray hover:text-yellow-400 flex flex-row items-center"
+              >
+                View work{" "}
+                <span
+                  className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300"
+                  aria-hidden="true"
+                >
+                  <ArrowRightIcon />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       {/* Works */}
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-primary-black">

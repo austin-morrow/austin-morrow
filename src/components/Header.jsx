@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import {
   XMarkIcon,
-  ArrowRightIcon,
   Bars2Icon,
 } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
-import { Link } from "react-scroll";
+import { Link } from 'react-router-dom';
+
 
 const navigation = [
-  { name: "Home", current: true },
-  { name: "Works", to: "work", current: false },
+  { name: "Home", to: "/", current: true },
+  { name: "Works", to: "works", current: false },
   { name: "About", to: "about", current: false },
   { name: "Services", to: "services", current: false },
 ];
@@ -35,8 +35,6 @@ export default function Header() {
               <div className="flex items-center gap-x-8">
                 <Link
                   to="contact"
-                  smooth={true}
-                  duration={500}
                   className="outline outline-2 border-3 border-primary-white text-primary-white hover:bg-primary-white hover:text-primary-black py-2 px-4 rounded-full"
                 >
                   Let's chat
@@ -80,20 +78,16 @@ export default function Header() {
                       key={item.name}
                       as="a"
                       to={item.to}
-                      smooth="true"
-                      duration={500}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white cursor-pointer hover:bg-neutral-800"
                       onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
                   ))}
-                  <div class="border-t border-gray-300 my-4"></div>
+                  <div className="border-t border-gray-300 my-4"></div>
                   <div className="pt-4">
                     <Link
                       to="contact"
-                      smooth={true}
-                      duration={500}
                       className="outline outline-2 border-3 border-primary-white text-primary-white hover:bg-primary-white hover:text-primary-black py-2 px-4 rounded-full"
                       onClick={closeMobileMenu}
                     >
@@ -107,42 +101,6 @@ export default function Header() {
         </Dialog>
       </header>
 
-      <div className="w-full flex-auto">
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:py-56 lg:px-8 mt-14 sm:mt-0 justify-start">
-          <div className="max-w-2xl py-24">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Front End Developer from Denver, CO
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-primary-light-gray">
-              Creating custom websites for creatives and small businesses
-            </p>
-            <div className="mt-10 flex items-center justify-start gap-x-6">
-              <Link
-                to="contact"
-                smooth="true"
-                duration={500}
-                className="rounded-full bg-yellow-400 px-3.5 py-2.5 text-sm font-semibold cursor-pointer text-black shadow-sm hover:bg-gold-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get started
-              </Link>
-              <Link
-                to="work"
-                smooth="true"
-                duration={500}
-                className="group text-sm font-semibold cursor-pointer leading-6 text-primary-light-gray hover:text-yellow-400 flex flex-row items-center"
-              >
-                View work{" "}
-                <span
-                  className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300"
-                  aria-hidden="true"
-                >
-                  <ArrowRightIcon />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
