@@ -129,21 +129,21 @@ const Home = () => {
             <div className="flex flex-wrap justify-center gap-4 md:gap-x-16">
               <a>
                 <img
-                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
                   src={One}
                   alt="Image 1"
                 />
               </a>
               <a>
                 <img
-                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
                   src={Two}
                   alt="Image 2"
                 />
               </a>
               <a>
                 <img
-                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
                   src={Three}
                   alt="Image 3"
                 />
