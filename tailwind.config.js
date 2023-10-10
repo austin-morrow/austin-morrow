@@ -11,6 +11,9 @@ export default {
         'primary-gray': '#525252',
         'primary-light-gray': '#E5E5E5',
         'primary-white': '#FFFFFF'
+      },
+      height: {
+        '128': '32rem',
       }
     },
   },

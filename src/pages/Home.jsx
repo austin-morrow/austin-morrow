@@ -1,5 +1,4 @@
 import React from "react";
-import CMImg from "../assets/images/cm-project.png";
 import CMLogo from "../assets/images/cm-logo.png";
 import Services from "../assets/images/nick-fewings.jpg";
 import ScrollToTopButton from "../components/ScrollToTopButton";
@@ -14,6 +13,9 @@ import {
   DocumentTextIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/20/solid";
+import One from "../assets/images/1.png";
+import Two from "../assets/images/2.png";
+import Three from "../assets/images/3.png";
 
 const ProjectBox = ({ imageUrl }) => {
   return (
@@ -24,24 +26,6 @@ const ProjectBox = ({ imageUrl }) => {
 };
 
 const Home = () => {
-  const projects = [
-    {
-      imageUrl: CMImg,
-      title: "Project 1",
-      description: "Description for Project 1",
-    },
-    {
-      imageUrl: "image2.jpg",
-      title: "Project 2",
-      description: "Description for Project 2",
-    },
-    {
-      imageUrl: "image3.jpg",
-      title: "Project 3",
-      description: "Description for Project 3",
-    },
-  ];
-
   const features = [
     {
       name: "Layout.",
@@ -87,36 +71,6 @@ const Home = () => {
       description:
         "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
       icon: RocketLaunchIcon,
-    },
-  ];
-
-  const posts = [
-    {
-      id: 1,
-      href: "#",
-      author: {
-        name: "Michael Foster",
-        role: "Co-Founder / CTO",
-        href: "#",
-      },
-    },
-    {
-      id: 2,
-      href: "#",
-      author: {
-        name: "Michael Foster",
-        role: "Co-Founder / CTO",
-        href: "#",
-      },
-    },
-    {
-      id: 3,
-      href: "#",
-      author: {
-        name: "Michael Foster",
-        role: "Co-Founder / CTO",
-        href: "#",
-      },
     },
   ];
 
@@ -171,41 +125,30 @@ const Home = () => {
               at. In mi viverra elit nunc.
             </p>
           </div>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {posts.map((post) => (
-              <article
-                key={post.id}
-                className="bg-red-400 flex max-w-xl flex-col items-start justify-between"
-              >
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a href={post.href}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </a>
-                  </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {post.description}
-                  </p>
-                </div>
-                <div className="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src={post.author.imageUrl}
-                    alt=""
-                    className="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div className="text-sm leading-6">
-                    <p className="font-semibold text-gray-900">
-                      <a href={post.author.href}>
-                        <span className="absolute inset-0" />
-                        {post.author.name}
-                      </a>
-                    </p>
-                    <p className="text-gray-600">{post.author.role}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="flex justify-center items-center py-16">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-x-16">
+              <a>
+                <img
+                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  src={One}
+                  alt="Image 1"
+                />
+              </a>
+              <a>
+                <img
+                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  src={Two}
+                  alt="Image 2"
+                />
+              </a>
+              <a>
+                <img
+                  className="w-auto h-96 rounded-xl cursor-pointer"
+                  src={Three}
+                  alt="Image 3"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
