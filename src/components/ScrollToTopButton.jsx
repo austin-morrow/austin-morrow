@@ -12,11 +12,7 @@ function ScrollToTopButton() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-
-      // Check if the user is scrolling up
       setIsVisible(currentScrollPos < prevScrollPos && currentScrollPos > 0);
-
-      // Update the previous scroll position
       setPrevScrollPos(currentScrollPos);
     };
 

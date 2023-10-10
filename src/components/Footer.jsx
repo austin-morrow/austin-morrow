@@ -1,9 +1,6 @@
 import React from "react";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
-import Instagram from "../assets/images/instagram.png";
-import Twitter from "../assets/images/twitter.png";
-import LinkedIn from "../assets/images/linkedin.png";
-import GitHub from "../assets/images/github.png";
+
 
 import { Link } from "react-router-dom";
 
