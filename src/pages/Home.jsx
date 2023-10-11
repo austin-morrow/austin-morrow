@@ -17,13 +17,6 @@ import One from "../assets/images/1.png";
 import Two from "../assets/images/2.png";
 import Three from "../assets/images/3.png";
 
-const ProjectBox = ({ imageUrl }) => {
-  return (
-    <div className="bg-primary-light-gray rounded-lg shadow-md h-80 flex flex-col justify-center items-center hover:-translate-y-1.5 hover:cursor-pointer hover:scale-100 duration-300">
-      <img src={imageUrl} alt="Project Image" className="w-3/5 h-4/5" />
-    </div>
-  );
-};
 
 const Home = () => {
   const features = [
