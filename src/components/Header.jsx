@@ -3,13 +3,13 @@ import { Dialog } from "@headlessui/react";
 import { XMarkIcon, Bars2Icon } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
-  { name: "Works", to: "works", current: false },
-  { name: "About", to: "about", current: false },
-  { name: "Services", to: "services", current: false },
+  { name: "Works", to: "/works", current: false },
+  { name: "About", to: "/about", current: false },
+  { name: "Services", to: "/services", current: false },
 ];
 
 export default function Header() {
@@ -17,6 +17,9 @@ export default function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+  const location = useLocation();
+
+  const isLinkActive = (path) => location.pathname === path;
 
   return (
     <div className="bg-primary-black">
@@ -76,7 +79,9 @@ export default function Header() {
                       key={item.name}
                       as="a"
                       to={item.to}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white cursor-pointer hover:bg-neutral-800"
+                      className={`block rounded-lg px-3 py-2 text-base font-semibold leading-7 cursor-pointer hover:bg-neutral-800 ${
+                        isLinkActive(item.to) ? "text-yellow-400" : "text-white"
+                      }`}
                       onClick={closeMobileMenu}
                     >
                       {item.name}
@@ -99,7 +104,7 @@ export default function Header() {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
+                            className="h-5 w-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -109,7 +114,7 @@ export default function Header() {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
+                            className="h-5 w-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -119,7 +124,7 @@ export default function Header() {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
+                            className="h-5 w-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -129,7 +134,7 @@ export default function Header() {
                         <div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
+                            className="h-5 w-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
