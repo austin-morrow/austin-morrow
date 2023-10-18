@@ -11,11 +11,11 @@ function Footer() {
     <div className="static bg-primary-black left-0 right-0 top-2 z-40 py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none flex items-center justify-between border-t">
-          <div className="pt-14 flex flex-row gap-x-4 text-primary-light-gray">
+          <div className="pt-14 flex flex-row gap-x-8 text-primary-light-gray">
             <div>
               <Link
                 to="/"
-                className={isLinkActive("/") ? "text-yellow-400" : ""}
+                className="hover:text-yellow-400"
               >
                 Home
               </Link>
@@ -23,7 +23,7 @@ function Footer() {
             <div>
               <Link
                 to="/works"
-                className={isLinkActive("/works") ? "text-yellow-400" : ""}
+                className="hover:text-yellow-400"
               >
                 Works
               </Link>
@@ -31,23 +31,15 @@ function Footer() {
             <div>
               <Link
                 to="/about"
-                className={isLinkActive("/about") ? "text-yellow-400" : ""}
+                className="hover:text-yellow-400"
               >
                 About
               </Link>
             </div>
             <div>
               <Link
-                to="/services"
-                className={isLinkActive("/services") ? "text-yellow-400" : ""}
-              >
-                Services
-              </Link>
-            </div>
-            <div>
-              <Link
                 to="/contact"
-                className={isLinkActive("/contact") ? "text-yellow-400" : ""}
+                className="hover:text-yellow-400"
               >
                 Contact
               </Link>
@@ -59,7 +51,7 @@ function Footer() {
                 <a href="https://www.instagram.com/agmorrow/" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-5 w-5 hover:text-yellow-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -71,7 +63,7 @@ function Footer() {
                 <a href="https://twitter.com/agmorrow_" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-5 w-5 hover:text-yellow-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -83,7 +75,7 @@ function Footer() {
                 <a href="https://www.linkedin.com/in/agmorrow/" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-5 w-5 hover:text-yellow-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -95,7 +87,7 @@ function Footer() {
                 <a href="https://github.com/agmorrow" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-5 w-5 hover:text-yellow-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -112,7 +104,7 @@ function Footer() {
             <img className="h-20" src={PrimaryLogo} alt="" />
           </div>
 
-          <div className="flex items-center gap-x-8">
+          <div className="flex items-center pt-14 gap-x-8">
             <div className="text-primary-light-gray">Austin Morrow 2023</div>
           </div>
         </div>
