@@ -44,7 +44,7 @@ const Home = () => {
     {
       name: "Discovery",
       description:
-        "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
+        "Working with you to dig into your needs to create a customized solution. Whether you have a clear vision or need something built from the ground up, I'm ready to shape your brand or product, no matter where it currently stands.",
       icon: LightBulbIcon,
     },
     {
@@ -113,9 +113,7 @@ const Home = () => {
               Works
             </p>
             <p className="mt-6 text-lg leading-8 text-primary-light-gray">
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-              Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-              at. In mi viverra elit nunc.
+            Here are a few of the things I've been working on lately.
             </p>
           </div>
           <div className="flex justify-center items-center py-16">
@@ -241,7 +239,7 @@ const Home = () => {
                 Deploy faster
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Ready to start your next
+                The process
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Quis tellus eget adipiscing convallis sit sit eget aliquet quis.

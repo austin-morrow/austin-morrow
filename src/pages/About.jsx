@@ -1,8 +1,32 @@
 import React from "react";
 import AboutImg from "../assets/images/about-img.png";
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, ServerIcon,
+  CodeBracketSquareIcon,
+  RectangleGroupIcon, } from "@heroicons/react/20/solid";
 
 export default function About() {
+
+  const stages = [
+    {
+      name: "Layout",
+      description:
+        "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
+      icon: RectangleGroupIcon,
+    },
+    {
+      name: "Development",
+      description:
+        "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
+      icon: CodeBracketSquareIcon,
+    },
+    {
+      name: "Hosting",
+      description:
+        "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
+      icon:  ServerIcon,
+    },
+  ];
+
   return (
     <div className="bg-primary-black flex-auto">
       <div className="sm:px-8 pt-16 sm:py-36">
@@ -13,7 +37,7 @@ export default function About() {
                 <div className="max-w-xs px-2.5 lg:max-w-none">
                   <img
                     src={AboutImg}
-                    className="rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 h-96 w-96"
+                    className="rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 h-128 w-96"
                   />
                 </div>
               </div>
@@ -24,35 +48,18 @@ export default function About() {
                 </h1>
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin pharetra odio ac bibendum gravida. Ut efficitur ex mi,
-                    quis hendrerit tortor consectetur vitae. Fusce viverra, eros
-                    non luctus faucibus, nisi lorem pellentesque erat, interdum
-                    lacinia lacus ex congue felis. Praesent sed odio et.
+                  I love building and designing web applications. With a background in non-profit work, I have always looked for ways to empower individuals and share stories. I have found that web development is more than just building a website and hosting it online. 
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer vel ipsum orci. Suspendisse interdum ullamcorper
-                    nisl ac suscipit. Donec porttitor ut arcu eu rhoncus. Sed
-                    suscipit elit nec ornare euismod. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Nulla at arcu cursus
-                    neque tempus elementum quis at.
+                  With a background in computer science, I'm a problem solver at heart and love taking on complex and challenging projects. I'm great at quickly getting up to speed and breaking down tricky business requirements for industry-specific systems.
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur vulputate turpis pretium viverra dignissim. Cras
-                    convallis eros tincidunt lobortis facilisis. Vestibulum
-                    posuere, urna vitae eleifend porta, justo neque porttitor
-                    odio, vitae rhoncus tellus sem at purus. Donec quis erat eu
-                    massa sodales accumsan. In ut felis risus. Quisque.
+                  As a full-stack developer, I'm a one-stop-shop, able to take ideas from conception to completion, handling the entire process from start to finish.
+
+
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse consequat enim a metus hendrerit pharetra. Fusce
-                    vestibulum lobortis arcu sit amet hendrerit. Vivamus felis
-                    arcu, varius sed cursus et, molestie condimentum risus.
-                    Proin faucibus neque a nisi finibus feugiat. Nunc sed
-                    dignissim tortor, eget sagittis lectus. Proin ex.
+                   So whether you're a non-technical founder building your first app or an established enterprise with an existing tech team, I'm ready to jump in and help you get your next big idea off the ground.
                   </p>
                 </div>
               </div>
@@ -157,6 +164,43 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <div className="relative mx-auto max-w-7xl py-16 md:px-6 bg-primary-black">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <h2 className="text-base font-semibold leading-7 text-yellow-400">
+                Deploy faster
+              </h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
+                Services
+              </p>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+                Suspendisse eget egestas a elementum pulvinar et feugiat blandit
+                at. In mi viverra elit nunc.
+              </p>
+            </div>
+            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+                {stages.map((stage) => (
+                  <div key={stage.name} className="relative pl-16">
+                    <dt className="text-base font-semibold leading-7 text-primary-white">
+                        <stage.icon
+                          className="h-6 w-6 text-yellow-400"
+                          aria-hidden="true"
+                        />
+                    
+                      {stage.name}
+                    </dt>
+                    <dd className="mt-2 text-base leading-7 text-primary-light-gray">
+                      {stage.description}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
