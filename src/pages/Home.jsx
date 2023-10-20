@@ -44,25 +44,25 @@ const Home = () => {
     {
       name: "Discovery",
       description:
-        "Working with you to dig into your needs to create a customized solution. Whether you have a clear vision or need something built from the ground up, I'm ready to shape your brand or product, no matter where it currently stands.",
+        "Start the journey with a friendly chat, diving deep into your project's essence. It's all about understanding your vision and listening to your ideas.",
       icon: LightBulbIcon,
     },
     {
       name: "Proposal",
       description:
-        "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
+        "Ready to make it official? Craft a project proposal that outlines all the details, marking the exciting first step towards bringing your project to life.",
       icon: DocumentTextIcon,
     },
     {
       name: "Build",
       description:
-        "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
+        "Now, it's time to roll up your sleeves and work your magic. Begin building your project from scratch, infusing it with creativity and functionality.",
       icon: WrenchScrewdriverIcon,
     },
     {
       name: "Launch",
       description:
-        "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
+        "Drumroll, please! The big day has arrived. Deploy your project, making it accessible to the world. It's the moment when your vision becomes a digital reality.",
       icon: RocketLaunchIcon,
     },
   ];
@@ -89,7 +89,7 @@ const Home = () => {
                 to="works"
                 className="group text-sm font-semibold cursor-pointer leading-6 text-primary-light-gray hover:text-yellow-400 flex flex-row items-center"
               >
-                View work{" "}
+                Learn more{" "}
                 <span
                   className="h-4 w-4 ml-2 group-hover:rotate-90 duration-300"
                   aria-hidden="true"
@@ -107,7 +107,7 @@ const Home = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-base font-semibold leading-7 text-yellow-400">
-              Deploy faster
+            Explore my portfolio
             </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
               Works
@@ -193,7 +193,7 @@ const Home = () => {
             <div className="lg:pr-8 lg:pt-4">
               <div className="lg:max-w-lg">
                 <h2 className="text-base font-semibold leading-7 text-yellow-400">
-                  Deploy faster
+                  What I offer
                 </h2>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
                   Services
@@ -236,15 +236,13 @@ const Home = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-base font-semibold leading-7 text-yellow-400">
-                Deploy faster
+              My creative process
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                The process
+              Project path
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-                Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-                at. In mi viverra elit nunc.
+                Let's work together to get your ideas and turn them into your online presense.
               </p>
             </div>
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
