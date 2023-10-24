@@ -16,9 +16,7 @@ export default function Works() {
               Here are some of the projects I have worked on
             </p>
             <p className="mt-6 text-lg leading-8 text-primary-light-gray">
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-              Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-              at. In mi viverra elit nunc.
+              I love being about to 
             </p>
           </div>
           <div className="flex justify-center items-center py-16">

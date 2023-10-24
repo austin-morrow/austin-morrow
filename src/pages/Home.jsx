@@ -23,7 +23,7 @@ const Home = () => {
     {
       name: "Layout.",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+        "I enhance your online journey with well-crafted layouts. I understand the power of design to make your digital process both seamless and visually striking.",
       icon: RectangleGroupIcon,
     },
     {
@@ -145,7 +145,7 @@ const Home = () => {
       </div>
 
       {/* Review */}
-      <section className="relative isolate overflow-hidden bg-primary-gray px-6 py-14 sm:py-20 lg:px-8">
+      <section className="relative mx-auto rounded-3xl max-w-full overflow-hidden bg-primary-gray px-6 py-14 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <figure>
             <blockquote className="text-center text-xl font-semibold leading-8 text-primary-white sm:text-2xl sm:leading-9">
