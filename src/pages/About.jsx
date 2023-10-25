@@ -29,7 +29,7 @@ export default function About() {
 
   return (
     <div className="bg-primary-black flex-auto">
-      <div className="sm:px-8 pt-16 sm:py-36">
+      <div className="sm:px-8 pt-16">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -167,7 +167,7 @@ export default function About() {
 
       <div className="relative mx-auto max-w-7xl py-16 md:px-6 bg-primary-black">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:text-center">
+            <div className="mx-auto max-w-2xl mx-0">
               <h2 className="text-base font-semibold leading-7 text-yellow-400">
                 Deploy faster
               </h2>
