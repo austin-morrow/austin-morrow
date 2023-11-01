@@ -9,7 +9,7 @@ const navigation = [
   { name: "Home", to: "/", current: true },
   { name: "Works", to: "/works", current: false },
   { name: "About", to: "/about", current: false },
-  { name: "Contact", to: "/contact", current: false }
+  { name: "Contact", to: "/contact", current: false },
 ];
 
 export default function Header() {
@@ -32,38 +32,26 @@ export default function Header() {
                   <img className="h-28" src={PrimaryLogo} alt="" />
                 </Link>
               </div>
-              <div className="hidden md:flex items-center gap-x-9">
+              <div className="flex items-center gap-x-9">
                 <div className="flex flex-row gap-x-8 text-primary-light-gray">
                   <div>
-                    <Link to="/" className="hover:text-yellow-400">
-                      Home
-                    </Link>
-                  </div>
-                  <div>
-                    <Link to="/works" className="hover:text-yellow-400">
-                      Works
-                    </Link>
-                  </div>
-                  <div>
-                    <Link to="/about" className="hover:text-yellow-400">
-                      About
-                    </Link>
-                  </div>
-                  <div>
-                    <Link to="/contact" className="hover:text-yellow-400">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center rounded-full px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white"
+                    >
                       Contact
                     </Link>
                   </div>
+                  <button
+                    type="button"
+                    className="group -m-2.5 rounded-full p-2.5 text-primary-white"
+                    onClick={() => setMobileMenuOpen(true)}
+                  >
+                    <span className="sr-only">Open main menu</span>
+                    <Bars2Icon className="h-8" />
+                  </button>
                 </div>
               </div>
-              <button
-                  type="button"
-                  className="md:hidden group -m-2.5 rounded-full p-2.5 text-white"
-                  onClick={() => setMobileMenuOpen(true)}
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <Bars2Icon className="h-8" />
-                </button>
             </div>
           </div>
         </div>
@@ -72,7 +60,6 @@ export default function Header() {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="bg-neutral-900 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-end">
-             
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-primary-white"
@@ -98,10 +85,10 @@ export default function Header() {
                   ))}
                   <div className="border-t border-gray-300 my-4"></div>
                   <div className="flex flex-row items-center justify-between px-2 pt-4">
-                  <div className="-m-1.5 p-1.5">
-                <span className="sr-only">Austin Morrow</span>
-                <img className="h-8 w-auto" src={SecondaryLogo} alt="" />
-              </div>
+                    <div className="-m-1.5 p-1.5">
+                      <span className="sr-only">Austin Morrow</span>
+                      <img className="h-8 w-auto" src={SecondaryLogo} alt="" />
+                    </div>
                     <div className="flex items-center">
                       <div className="flex flex-row gap-x-4 text-primary-light-gray">
                         <div>
