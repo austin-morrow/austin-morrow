@@ -55,10 +55,10 @@ export default function Header() {
             </div>
           </div>
         </div>
-
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="bg-neutral-900 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+  <div className="fixed inset-0 z-50" />
+  <Dialog.Panel className="bg-neutral-900 fixed inset-x-0 top-1/2 transform -translate-y-1/2 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    {/* ... The rest of your dialog content */}
             <div className="flex items-center justify-end">
               <button
                 type="button"
