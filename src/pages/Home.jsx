@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "../components/Contact";
 import CMLogo from "../assets/images/cm-logo.png";
 import Services from "../assets/images/nick-fewings.jpg";
 import ScrollToTopButton from "../components/ScrollToTopButton";
@@ -31,12 +32,12 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Selected work */}
+      {/* Selected works */}
       <div id="works" className="bg-primary-black py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
-              Selected work
+              Selected works
             </p>
           </div>
           <div className="flex justify-center items-center py-16">
@@ -300,6 +301,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Contact */}
+      <Contact />
       <ScrollToTopButton />
     </div>
   );
