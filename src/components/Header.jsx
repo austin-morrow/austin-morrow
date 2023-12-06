@@ -34,10 +34,16 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-x-9">
                 <div className="flex flex-row gap-x-8 text-primary-light-gray">
+                <div>
+                  Selected work
+                </div>
+                <div>
+                  About
+                </div>
                   <div>
                     <Link
                       to="/contact"
-                      className="inline-flex items-center rounded-full px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white"
+                      className="inline-flex items-center rounded-lg px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white"
                     >
                       Contact
                     </Link>
