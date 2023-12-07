@@ -7,9 +7,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
-  { name: "Works", to: "/works", current: false },
+  { name: "Selected work", to: "/works", current: false },
   { name: "About", to: "/about", current: false },
-  { name: "Contact", to: "/contact", current: false },
 ];
 
 export default function Header() {
@@ -33,13 +32,9 @@ export default function Header() {
                 </Link>
               </div>
               <div className="flex items-center gap-x-9">
-                <div className="flex flex-row gap-x-8 text-primary-light-gray">
-                <div>
-                  Selected work
-                </div>
-                <div>
-                  About
-                </div>
+                <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
+                  <div>Selected work</div>
+                  <div>About</div>
                   <div>
                     <Link
                       to="/contact"
@@ -48,33 +43,39 @@ export default function Header() {
                       Contact
                     </Link>
                   </div>
-                  <button
-                    type="button"
-                    className="group -m-2.5 rounded-full p-2.5 text-primary-white"
-                    onClick={() => setMobileMenuOpen(true)}
-                  >
-                    <span className="sr-only">Open main menu</span>
-                    <Bars2Icon className="h-8" />
-                  </button>
                 </div>
+                <button
+                  type="button"
+                  className={`group -m-2.5 rounded-full p-2.5 text-primary-white ${
+                    mobileMenuOpen ? "hidden" : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(true)}
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <Bars2Icon className="h-8 md:hidden" />
+                </button>
+
+                <button
+                  type="button"
+                  className={`-m-2.5 rounded-md p-2.5 text-primary-white ${
+                    !mobileMenuOpen ? "hidden" : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon
+                    className="h-8"
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
             </div>
           </div>
         </div>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-  <div className="fixed inset-0 z-50" />
-  <Dialog.Panel className="bg-neutral-900 fixed inset-x-0 top-1/2 transform -translate-y-1/2 z-50 w-full overflow-y-auto bg-neutral-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-    {/* ... The rest of your dialog content */}
-            <div className="flex items-center justify-end">
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-primary-white"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-8" aria-hidden="true" />
-              </button>
-            </div>
+          <div className="fixed inset-0 bg-slate-300/50 opacity-100" />
+          <Dialog.Panel className="fixed inset-x-5 top-36 flex origin-top flex-col rounded-2xl bg-neutral-900 p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5 opacity-100 scale-100 z-50">
+            {/* ... The rest of your dialog content */}
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">

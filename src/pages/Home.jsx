@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="bg-primary-black">
       <div className="w-full flex-auto">
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-24 lg:py-24 lg:px-8 mt-14 sm:mt-0 justify-start">
+        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-24 lg:py-24 lg:px-8 sm:mt-0 justify-start">
           <div className="max-w-2xl py-24">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Front End Developer from Denver, CO
