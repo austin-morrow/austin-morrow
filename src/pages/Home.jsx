@@ -16,6 +16,26 @@ import One from "../assets/images/1.png";
 import Two from "../assets/images/2.png";
 import Three from "../assets/images/3.png";
 
+const worksData = [
+  {
+    title: "Box 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    imageSrc: "path/to/image1.jpg",
+  },
+  {
+    title: "Box 2",
+    description:
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    imageSrc: "path/to/image2.jpg",
+  },
+  {
+    title: "Box 3",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    imageSrc: "path/to/image3.jpg",
+  },
+];
+
 const Home = () => {
   return (
     <div className="bg-primary-black">
@@ -33,47 +53,38 @@ const Home = () => {
       </div>
 
       {/* Selected works */}
-      <div id="works" className="bg-primary-black py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
-              Selected works
-            </p>
-          </div>
-          <div className="flex justify-center items-center py-16">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-x-16">
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={One}
-                alt="Image 1"
-              >
-                <div className="p-6">
-                 
-                </div>
-              </div>
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={Two}
-                alt="Image 2"
-              >
-                <div className="p-6">
-                 
-                </div>
-              </div>
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={Three}
-                alt="Image 3"
-              >
-                <div className="p-6">
-                 
-                </div>
+      <section id="works" className="bg-primary-black py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:mx-0">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
+            Selected works
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-2 md:gap-x-16 py-10">
+          {worksData.map((box, index) => (
+            <div
+              key={index}
+              className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white relative space-x-4"
+            >
+              <img src={box.imageSrc} alt={`Image ${index + 1}`} className="w-full h-full rounded-xl object-cover" />
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <p className="text-white text-lg font-bold">{box.title}</p>
+                <p className="text-gray-400">{box.description}</p>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="w-full flex justify-center">
+          <Link to="/works" className="w-5/6">
+            <div className="h-12 rounded-md cursor-pointer outline outline-2 outline-white text-white flex justify-center items-center">
+              View work
+            </div>
+          </Link>
         </div>
       </div>
-
+    </section>
 
       {/* About */}
       <div className="bg-primary-black flex-auto">
@@ -240,8 +251,11 @@ const Home = () => {
                 src={One}
                 alt="Image 1"
               >
-                <div className="p-6">
+                <div className="p-6 text-white">
                   <RectangleGroupIcon className="top-1 h-5 w-5 text-yellow-400" />
+                  Layout. I enhance your online journey with well-crafted
+                  layouts. I understand the power of design to make your digital
+                  process both seamless and visually striking.
                 </div>
               </div>
               <div
@@ -249,8 +263,10 @@ const Home = () => {
                 src={Two}
                 alt="Image 2"
               >
-                <div className="p-6">
+                <div className="p-6 text-white">
                   <CodeBracketSquareIcon className="top-1 h-5 w-5 text-yellow-400" />
+                  Development. Anim aute id magna aliqua ad ad non deserunt
+                  sunt. Qui irure qui lorem cupidatat commodo.
                 </div>
               </div>
               <div
@@ -258,8 +274,10 @@ const Home = () => {
                 src={Three}
                 alt="Image 3"
               >
-                <div className="p-6">
+                <div className="p-6 text-white">
                   <ServerIcon className="top-1 h-5 w-5 text-yellow-400" />
+                  Hosting. Ac tincidunt sapien vehicula erat auctor pellentesque
+                  rhoncus. Et magna sit morbi lobortis.
                 </div>
               </div>
             </div>
