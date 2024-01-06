@@ -1,7 +1,9 @@
 import React from "react";
 import Contact from "../components/Contact";
 import CMLogo from "../assets/images/cm-logo.png";
-import Services from "../assets/images/nick-fewings.jpg";
+import CMWeb from "../assets/images/cm-web.png";
+import KYWeb from "../assets/images/kysenior-web.png";
+import MorrowWeb from "../assets/images/morrow-web.png";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import AboutImg from "../assets/images/about-img.png";
 import { Link } from "react-router-dom";
@@ -12,27 +14,27 @@ import {
   CodeBracketSquareIcon,
   RectangleGroupIcon,
 } from "@heroicons/react/20/solid";
-import One from "../assets/images/1.png";
-import Two from "../assets/images/2.png";
-import Three from "../assets/images/3.png";
 
 const worksData = [
   {
-    title: "Box 1",
+    title: "Centurion Maintenance",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    imageSrc: "path/to/image1.jpg",
+    imageSrc: CMWeb,
+    href: "https://centurionmaintenanceinc.com/",
   },
   {
-    title: "Box 2",
+    title: "Morrow Manor Photography",
     description:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imageSrc: "path/to/image2.jpg",
+    imageSrc: MorrowWeb,
+    href: "https://www.google.com",
   },
   {
-    title: "Box 3",
+    title: "KY Senior Health",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imageSrc: "path/to/image3.jpg",
+    imageSrc: KYWeb,
+    href: "https://www.google.com",
   },
 ];
 
@@ -54,37 +56,45 @@ const Home = () => {
 
       {/* Selected works */}
       <section id="works" className="bg-primary-black py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
-            Selected works
-          </h2>
-        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
+              Selected works
+            </h2>
+          </div>
 
-        <div className="flex flex-wrap justify-center gap-2 md:gap-x-16 py-10">
-          {worksData.map((box, index) => (
-            <div
-              key={index}
-              className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white relative space-x-4"
-            >
-              <img src={box.imageSrc} alt={`Image ${index + 1}`} className="w-full h-full rounded-xl object-cover" />
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <p className="text-white text-lg font-bold">{box.title}</p>
-                <p className="text-gray-400">{box.description}</p>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-x-16 py-10">
+            {worksData.map((box, index) => (
+              <a href={box.href} target="_blank">
+                <div
+                  key={index}
+                  className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white relative space-x-4"
+                >
+                  <div>
+                    <img
+                      src={box.imageSrc}
+                      alt={`Image ${index + 1}`}
+                      className="w-full h-full rounded-t-xl object-cover border-b-2 border-white"
+                    />
+                  </div>
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <p className="text-white text-lg font-bold">{box.title}</p>
+                    <p className="text-gray-400">{box.description}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="w-full flex justify-center">
+            <Link to="/works" className="w-5/6">
+              <div className="h-12 rounded-md cursor-pointer outline outline-2 outline-white text-white flex justify-center items-center hover:bg-white hover:text-black">
+                View work
               </div>
-            </div>
-          ))}
+            </Link>
+          </div>
         </div>
-
-        <div className="w-full flex justify-center">
-          <Link to="/works" className="w-5/6">
-            <div className="h-12 rounded-md cursor-pointer outline outline-2 outline-white text-white flex justify-center items-center">
-              View work
-            </div>
-          </Link>
-        </div>
-      </div>
-    </section>
+      </section>
 
       {/* About */}
       <div className="bg-primary-black flex-auto">
@@ -248,7 +258,7 @@ const Home = () => {
             <div className="flex flex-wrap justify-center gap-4 md:gap-x-16">
               <div
                 className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={One}
+                src=""
                 alt="Image 1"
               >
                 <div className="p-6 text-white">
@@ -260,7 +270,7 @@ const Home = () => {
               </div>
               <div
                 className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={Two}
+                src=""
                 alt="Image 2"
               >
                 <div className="p-6 text-white">
@@ -271,7 +281,7 @@ const Home = () => {
               </div>
               <div
                 className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white"
-                src={Three}
+                src=""
                 alt="Image 3"
               >
                 <div className="p-6 text-white">

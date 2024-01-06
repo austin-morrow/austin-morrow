@@ -1,7 +1,4 @@
 import React from 'react';
-import One from "../assets/images/1.png";
-import Two from "../assets/images/2.png";
-import Three from "../assets/images/3.png";
 
 export default function Works() {
   return (
@@ -24,21 +21,21 @@ export default function Works() {
               <a>
                 <img
                   className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
-                  src={One}
+                  src=""
                   alt="Image 1"
                 />
               </a>
               <a>
                 <img
                   className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
-                  src={Two}
+                  src=""
                   alt="Image 2"
                 />
               </a>
               <a>
                 <img
                   className="w-auto h-96 rounded-xl cursor-pointer hover:-translate-y-1.5 hover:scale-100 duration-300"
-                  src={Three}
+                  src=""
                   alt="Image 3"
                 />
               </a>
