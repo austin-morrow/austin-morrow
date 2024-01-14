@@ -4,7 +4,7 @@ import { XMarkIcon, Bars2Icon } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Selected work", to: "work", current: false },
@@ -14,6 +14,10 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isWorksPage = location.pathname === "/works";
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
@@ -31,12 +35,33 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-x-9">
                 <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
-                  <ScrollLink to="work" smooth={true} duration={500} class="hover:text-yellow-400 cursor-pointer">
-                    Selected work
-                  </ScrollLink>
-                  <ScrollLink to="about" smooth={true} duration={500} class="hover:text-yellow-400 cursor-pointer">
-                    About
-                  </ScrollLink>
+                  {isWorksPage ? (
+                    <>
+                      <Link to="/" class="hover:text-yellow-400 cursor-pointer">
+                        Home
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <ScrollLink
+                        to="work"
+                        smooth={true}
+                        duration={500}
+                        class="hover:text-yellow-400 cursor-pointer"
+                      >
+                        Selected work
+                      </ScrollLink>
+                      <ScrollLink
+                        to="about"
+                        smooth={true}
+                        duration={500}
+                        class="hover:text-yellow-400 cursor-pointer"
+                      >
+                        About
+                      </ScrollLink>
+                    </>
+                  )}
+
                   <ScrollLink
                     to="contact"
                     smooth={true}
@@ -46,6 +71,7 @@ export default function Header() {
                     Contact
                   </ScrollLink>
                 </div>
+
                 <button
                   type="button"
                   className={`group -m-2.5 rounded-full p-2.5 text-primary-white ${
