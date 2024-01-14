@@ -55,11 +55,11 @@ const Home = () => {
       </div>
 
       {/* Selected works */}
-      <section id="works" className="bg-primary-black py-24 sm:py-32">
+      <section  name='work' className="bg-primary-black py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">
-              Selected works
+              Selected work
             </h2>
           </div>
 
@@ -97,7 +97,7 @@ const Home = () => {
       </section>
 
       {/* About */}
-      <div className="bg-primary-black flex-auto">
+      <div  name='about' className="bg-primary-black flex-auto">
         <div className="sm:px-8 pt-16">
           <div className="mx-auto w-full max-w-7xl lg:px-8">
             <div className="relative px-4 sm:px-8 lg:px-12">
@@ -247,7 +247,7 @@ const Home = () => {
       </div>
 
       {/* Services */}
-      <div id="works" className="bg-primary-black py-24 sm:py-32">
+      <div className="bg-primary-black py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="mt-2 text-3xl font-bold tracking-tight text-primary-white sm:text-4xl">

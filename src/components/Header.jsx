@@ -3,12 +3,13 @@ import { Dialog } from "@headlessui/react";
 import { XMarkIcon, Bars2Icon } from "@heroicons/react/24/outline";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", to: "/", current: true },
-  { name: "Selected work", to: "/works", current: false },
-  { name: "About", to: "/about", current: false },
+  { name: "Selected work", to: "work", current: false },
+  { name: "About", to: "about", current: false },
+  { name: "Contact", to: "contact", current: false },
 ];
 
 export default function Header() {
@@ -16,9 +17,6 @@ export default function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
-  const location = useLocation();
-
-  const isLinkActive = (path) => location.pathname === path;
 
   return (
     <div className="bg-primary-black">
@@ -33,16 +31,20 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-x-9">
                 <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
-                  <div>Selected work</div>
-                  <div>About</div>
-                  <div>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center rounded-lg px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white"
-                    >
-                      Contact
-                    </Link>
-                  </div>
+                  <ScrollLink to="work" smooth={true} duration={500} class="hover:text-yellow-400 cursor-pointer">
+                    Selected work
+                  </ScrollLink>
+                  <ScrollLink to="about" smooth={true} duration={500} class="hover:text-yellow-400 cursor-pointer">
+                    About
+                  </ScrollLink>
+                  <ScrollLink
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    className="inline-flex items-center rounded-lg px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white cursor-pointer"
+                  >
+                    Contact
+                  </ScrollLink>
                 </div>
                 <button
                   type="button"
@@ -63,10 +65,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
-                  <XMarkIcon
-                    className="h-8"
-                    aria-hidden="true"
-                  />
+                  <XMarkIcon className="h-8" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -80,7 +79,9 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <Link
+                    <ScrollLink
+                      smooth={true}
+                      duration={500}
                       key={item.name}
                       as="a"
                       to={item.to}
@@ -88,7 +89,7 @@ export default function Header() {
                       onClick={closeMobileMenu}
                     >
                       {item.name}
-                    </Link>
+                    </ScrollLink>
                   ))}
                   <div className="border-t border-gray-300 my-4"></div>
                   <div className="flex flex-row items-center justify-between px-2 pt-4">

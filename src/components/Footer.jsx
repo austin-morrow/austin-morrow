@@ -1,12 +1,8 @@
 import React from "react";
 import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer() {
-  const location = useLocation();
-
-  const isLinkActive = (path) => location.pathname === path;
-
   return (
     <div className="static bg-primary-black left-0 right-0 top-2 z-40 py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
