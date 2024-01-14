@@ -37,7 +37,7 @@ export default function Header() {
                 <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
                   {isWorksPage ? (
                     <>
-                      <Link to="/" class="hover:text-yellow-400 cursor-pointer">
+                      <Link to="/" className="hover:text-yellow-400 cursor-pointer">
                         Home
                       </Link>
                     </>
@@ -47,7 +47,7 @@ export default function Header() {
                         to="work"
                         smooth={true}
                         duration={500}
-                        class="hover:text-yellow-400 cursor-pointer"
+                        className="hover:text-yellow-400 cursor-pointer"
                       >
                         Selected work
                       </ScrollLink>
@@ -55,7 +55,7 @@ export default function Header() {
                         to="about"
                         smooth={true}
                         duration={500}
-                        class="hover:text-yellow-400 cursor-pointer"
+                        className="hover:text-yellow-400 cursor-pointer"
                       >
                         About
                       </ScrollLink>

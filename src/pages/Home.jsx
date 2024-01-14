@@ -64,7 +64,7 @@ const Home = () => {
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-x-16 py-10">
             {worksData.map((box, index) => (
-              <a href={box.href} target="_blank">
+              <a key={index} href={box.href} target="_blank">
                 <div
                   key={index}
                   className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-white relative space-x-4"
