@@ -6,12 +6,6 @@ import SecondaryLogo from "../assets/images/secondary_logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "react-router-dom";
 
-const navigation = [
-  { name: "Selected work", to: "work", current: false },
-  { name: "About", to: "about", current: false },
-  { name: "Contact", to: "contact", current: false },
-];
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -37,7 +31,10 @@ export default function Header() {
                 <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
                   {isWorksPage ? (
                     <>
-                      <Link to="/" className="hover:text-yellow-400 cursor-pointer">
+                      <Link
+                        to="/"
+                        className="hover:text-yellow-400 cursor-pointer"
+                      >
                         Home
                       </Link>
                     </>
@@ -100,23 +97,46 @@ export default function Header() {
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 bg-slate-300/50 opacity-100" />
           <Dialog.Panel className="fixed inset-x-5 top-36 flex origin-top flex-col rounded-2xl bg-neutral-900 p-4 text-lg tracking-tight text-white shadow-xl ring-1 ring-slate-900/5 opacity-100 scale-100 z-50">
-            {/* ... The rest of your dialog content */}
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <ScrollLink
-                      smooth={true}
-                      duration={500}
-                      key={item.name}
-                      as="a"
-                      to={item.to}
-                      className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 cursor-pointer text-white hover:text-yellow-400"
-                      onClick={closeMobileMenu}
-                    >
-                      {item.name}
-                    </ScrollLink>
-                  ))}
+                  {isWorksPage ? (
+                    <>
+                      <Link
+                        to="/"
+                        className="hover:text-yellow-400 cursor-pointer"
+                      >
+                        Home
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <ScrollLink
+                        to="work"
+                        smooth={true}
+                        duration={500}
+                        className="hover:text-yellow-400 cursor-pointer"
+                      >
+                        Selected work
+                      </ScrollLink>
+                      <ScrollLink
+                        to="about"
+                        smooth={true}
+                        duration={500}
+                        className="hover:text-yellow-400 cursor-pointer"
+                      >
+                        About
+                      </ScrollLink>
+                    </>
+                  )}
+                  <ScrollLink
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    className="hover:text-yellow-400 cursor-pointer"
+                  >
+                    Contact
+                  </ScrollLink>
                   <div className="border-t border-gray-300 my-4"></div>
                   <div className="flex flex-row items-center justify-between px-2 pt-4">
                     <div className="-m-1.5 p-1.5">
