@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="static bg-primary-black left-0 right-0 top-2 z-40 py-14">
+    <div className="static bg-primary-black py-14 mb-8 rounded-xl max-w-7xl mx-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none flex items-center justify-between border-t">
           <div className="pt-14">
-          <Link to="/">
-            <img className="h-20" src={PrimaryLogo} alt="" />
+            <Link to="/">
+              <img className="h-20" src={PrimaryLogo} alt="Logo" />
             </Link>
           </div>
 

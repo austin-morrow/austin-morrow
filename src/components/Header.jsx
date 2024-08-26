@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { XMarkIcon, Bars2Icon } from "@heroicons/react/24/outline";
-import PrimaryLogo from "../assets/images/logo_no_bg_lg.png";
+import PrimaryLogo from "../assets/images/logoconcept2.png";
 import SecondaryLogo from "../assets/images/secondary_logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-primary-black">
+    <div className="bg-primary-white">
       <header>
         <div className="sticky left-0 right-0 top-2 z-40 pt-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -28,7 +28,7 @@ export default function Header() {
                 </Link>
               </div>
               <div className="flex items-center gap-x-9">
-                <div className="hidden md:flex flex-row gap-x-8 text-primary-light-gray">
+                <div className="hidden md:flex flex-row gap-x-8 text-primary-black">
                   {isWorksPage ? (
                     <>
                       <Link
@@ -56,17 +56,17 @@ export default function Header() {
                       >
                         About
                       </ScrollLink>
+
+                      <ScrollLink
+                        to="contact"
+                        smooth={true}
+                        duration={500}
+                        className="hover:text-yellow-400 cursor-pointer"
+                      >
+                        Contact
+                      </ScrollLink>
                     </>
                   )}
-
-                  <ScrollLink
-                    to="contact"
-                    smooth={true}
-                    duration={500}
-                    className="inline-flex items-center rounded-lg px-4 py-1.5 text-sm text-primary-white ring-1 ring-primary-white cursor-pointer"
-                  >
-                    Contact
-                  </ScrollLink>
                 </div>
 
                 <button
