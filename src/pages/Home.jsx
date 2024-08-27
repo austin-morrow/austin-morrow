@@ -7,35 +7,6 @@ import MorrowWeb from "../assets/images/morrow-web.png";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import AboutImg from "../assets/images/about-img.png";
 import { Link } from "react-router-dom";
-import {
-  EnvelopeIcon,
-  ServerIcon,
-  CodeBracketSquareIcon,
-  RectangleGroupIcon,
-} from "@heroicons/react/20/solid";
-
-const worksData = [
-  {
-    title: "Centurion Maintenance",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    imageSrc: CMWeb,
-    href: "https://centurionmaintenanceinc.com/",
-  },
-  {
-    title: "Morrow Manor Photography",
-    description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imageSrc: MorrowWeb,
-    href: "https://www.google.com",
-  },
-  {
-    title: "KY Senior Health",
-    description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    imageSrc: KYWeb,
-    href: "https://www.google.com",
-  },
-];
 
 const Home = () => {
   return (
@@ -57,40 +28,34 @@ const Home = () => {
       <section name="work" className="bg-primary-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-black sm:text-4xl">
+            <h2 className="mt-2 text-primary-black sm:text-4xl">
               Selected work
             </h2>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-2 md:gap-x-16 py-10">
-            {worksData.map((box, index) => (
-              <a key={index} href={box.href} target="_blank">
-                <div
-                  key={index}
-                  className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-black relative space-x-4"
-                >
-                  <div>
-                    <img
-                      src={box.imageSrc}
-                      alt={`Image ${index + 1}`}
-                      className="w-full h-full rounded-t-xl object-cover border-b-2 border-black"
-                    />
-                  </div>
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                    <p className="text-white text-lg font-bold">{box.title}</p>
-                    <p className="text-gray-400">{box.description}</p>
-                  </div>
+      <div className="py-10">
+          <div className="w-full flex justify-center py-10">
+            <div className="w-5/6 flex justify-center gap-4">
+              <div className="flex flex-col gap-4 flex-1">
+                <div className="h-48 w-full rounded-md border-2 border-black">
+                  Left Top
                 </div>
-              </a>
-            ))}
+                <div className="h-48 w-full rounded-md border-2 border-black">
+                  Left Bottom
+                </div>
+              </div>
+              <div className="h-full w-full flex-1 rounded-md border-2 border-black">
+                Right
+              </div>
+            </div>
           </div>
 
           <div className="w-full flex justify-center">
-            <Link to="/works" className="w-5/6">
-              <div className="h-12 rounded-md cursor-pointer outline outline-2 outline-black text-black flex justify-center items-center hover:bg-white hover:text-black">
-                View work
+            <div className="w-5/6">
+              <div className="h-48 rounded-md outline outline-2 outline-black text-black flex justify-center items-center">
+                Morrow Manor Photography
               </div>
-            </Link>
+            </div>
+          </div>
           </div>
         </div>
       </section>
@@ -160,53 +125,68 @@ const Home = () => {
       </div>
 
       {/* Services */}
-      <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <p className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-4xl">
-              Services
-            </p>
-          </div>
-          <div className="flex justify-center items-center py-16">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-x-16">
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-black"
-                src=""
-                alt="Image 1"
-              >
-                <div className="p-6 text-black">
-                  <RectangleGroupIcon className="top-1 h-5 w-5 text-yellow-400" />
-                  Layout. I enhance your online journey with well-crafted
-                  layouts. I understand the power of design to make your digital
-                  process both seamless and visually striking.
-                </div>
-              </div>
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-black"
-                src=""
-                alt="Image 2"
-              >
-                <div className="p-6 text-black">
-                  <CodeBracketSquareIcon className="top-1 h-5 w-5 text-yellow-400" />
-                  Development. Anim aute id magna aliqua ad ad non deserunt
-                  sunt. Qui irure qui lorem cupidatat commodo.
-                </div>
-              </div>
-              <div
-                className="w-72 h-96 rounded-xl cursor-pointer outline outline-2 outline-black"
-                src=""
-                alt="Image 3"
-              >
-                <div className="p-6 text-black">
-                  <ServerIcon className="top-1 h-5 w-5 text-yellow-400" />
-                  Hosting. Ac tincidunt sapien vehicula erat auctor pellentesque
-                  rhoncus. Et magna sit morbi lobortis.
-                </div>
-              </div>
-            </div>
-          </div>
+
+      <div className="py-24 mx-auto max-w-7xl px-6 lg:px-8">
+  <div className="px-4 sm:px-0">
+    <h3 className="text-3xl font-bold tracking-tight leading-7 text-gray-900">
+      Services
+    </h3>
+  </div>
+  <div className="mt-6 border-t border-gray-100">
+    <div className="divide-y divide-gray-100">
+      <div className="px-4 py-6 sm:grid sm:grid-cols-12 sm:gap-4 sm:px-0">
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-1">
+          1.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          Layout
+        </div>
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-8">
+          I enhance your online journey with well-crafted layouts. I understand
+          the power of design to make your digital process both seamless and
+          visually striking.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+          Icon
         </div>
       </div>
+
+      <div className="px-4 py-6 sm:grid sm:grid-cols-12 sm:gap-4 sm:px-0">
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-1">
+          2.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          Development
+        </div>
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-8">
+          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+          cupidatat commodo.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+          Icon
+        </div>
+      </div>
+
+      <div className="px-4 py-6 sm:grid sm:grid-cols-12 sm:gap-4 sm:px-0">
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-1">
+          3.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+          Hosting
+        </div>
+        <div className="text-sm font-medium leading-6 text-gray-900 sm:col-span-8">
+          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
+          magna sit morbi lobortis.
+        </div>
+        <div className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+          Icon
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       {/* Testimonials */}
       {/* <div className="relative mx-auto max-w-7xl py-16 md:px-6 bg-primary-black">
