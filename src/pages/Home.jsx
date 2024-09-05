@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="bg-primary-white">
       <div className="w-full flex-auto">
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-24 lg:py-24 lg:px-8 sm:mt-0 justify-start">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 sm:mt-0 justify-start">
           <div className="max-w-2xl py-24">
             <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
               Front End Developer from Denver, CO
@@ -28,8 +28,8 @@ const Home = () => {
       <section name="work" className="bg-primary-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="mt-2 text-primary-black sm:text-4xl">
-              Selected work
+            <h2 className="mt-2 text-primary-black sm:text-xl">
+              Featured work
             </h2>
           </div>
       <div className="py-10">

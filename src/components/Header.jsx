@@ -33,7 +33,7 @@ export default function Header() {
                     <>
                       <Link
                         to="/"
-                        className="hover:text-yellow-400 cursor-pointer"
+                        className="hover:text-yellow-400 cursor-pointer text-lg"
                       >
                         Home
                       </Link>
@@ -44,15 +44,15 @@ export default function Header() {
                         to="work"
                         smooth={true}
                         duration={500}
-                        className="hover:text-yellow-400 cursor-pointer"
+                        className="hover:text-yellow-400 cursor-pointer text-lg"
                       >
-                        Selected work
+                        Work
                       </ScrollLink>
                       <ScrollLink
                         to="about"
                         smooth={true}
                         duration={500}
-                        className="hover:text-yellow-400 cursor-pointer"
+                        className="hover:text-yellow-400 cursor-pointer text-lg"
                       >
                         About
                       </ScrollLink>
