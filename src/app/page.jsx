@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import { Link } from "react-router-dom";
-
+import Link from 'next/router'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
