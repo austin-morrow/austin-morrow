@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Link } from "react-router-dom";
+import Link from 'next/link'
 
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { Squares2X2Icon, CircleStackIcon, CodeBracketSquareIcon } from '@heroicons/react/24/outline'
+import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import { loadCaseStudies } from '@/lib/mdx'
@@ -51,21 +51,21 @@ const features = [
     description:
       'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
     href: '#',
-    icon: Squares2X2Icon,
+    icon: InboxIcon,
   },
   {
     name: 'Development',
     description:
       'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
     href: '#',
-    icon: CodeBracketSquareIcon,
+    icon: UsersIcon,
   },
   {
     name: 'Hosting',
     description:
       'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
     href: '#',
-    icon: CircleStackIcon,
+    icon: TrashIcon,
   },
 ]
 
@@ -185,7 +185,7 @@ export function SelectedWork() {
 
 export function About() {
   return (
-    <Container name="about" className="mt-16 sm:mt-32">
+    <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
@@ -254,6 +254,56 @@ export function About() {
   )
 }
 
+// function Services() {
+//   return (
+//     <>
+//       <SectionIntro
+//         eyebrow="Services"
+//         title="We help you identify, explore and respond to new opportunities."
+//         className="mt-24 sm:mt-32 lg:mt-40"
+//       >
+//         <p>
+//           As long as those opportunities involve giving us money to re-purpose
+//           old projects — we can come up with an endless number of those.
+//         </p>
+//       </SectionIntro>
+//       <Container className="mt-16">
+//         <div className="lg:flex lg:items-center lg:justify-end">
+//           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
+//             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+//               <StylizedImage
+//                 src={imageLaptop}
+//                 sizes="(min-width: 1024px) 41rem, 31rem"
+//                 className="justify-center lg:justify-end"
+//               />
+//             </FadeIn>
+//           </div>
+//           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
+//             <ListItem title="Web development">
+//               We specialise in crafting beautiful, high quality marketing pages.
+//               The rest of the website will be a shell that uses lorem ipsum
+//               everywhere.
+//             </ListItem>
+//             <ListItem title="Application development">
+//               We have a team of skilled developers who are experts in the latest
+//               app frameworks, like Angular 1 and Google Web Toolkit.
+//             </ListItem>
+//             <ListItem title="E-commerce">
+//               We are at the forefront of modern e-commerce development. Which
+//               mainly means adding your logo to the Shopify store template we’ve
+//               used for the past six years.
+//             </ListItem>
+//             <ListItem title="Custom content management">
+//               At Studio we understand the importance of having a robust and
+//               customised CMS. That’s why we run all of our client projects out
+//               of a single, enormous Joomla instance.
+//             </ListItem>
+//           </List>
+//         </div>
+//       </Container>
+//     </>
+//   )
+// }
 
 function Services() {
   return (
@@ -261,7 +311,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Services
+            Stay on top of customer support
           </h2>
           <p className="mt-6 text-lg/8 text-gray-600">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
@@ -305,7 +355,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="my-24 sm:my-32 md:my-56">
+      <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
             Software developer from Denver, CO.
@@ -318,7 +368,7 @@ export default async function Home() {
 
       <SelectedWork />
 
-      <About name="about"/>
+      <About />
 
 
       <Testimonial

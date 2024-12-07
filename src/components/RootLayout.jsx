@@ -8,15 +8,10 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Link as ScrollLink } from "react-scroll";
-//import { Link, useLocation } from "react-router-dom";
 import Link from 'next/link'
-
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
-
-
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -27,12 +22,6 @@ import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
 
 const RootLayoutContext = createContext(null)
-
-const navigation = [
-  { name: 'Work', to: 'work' },
-  { name: 'About', to: 'about' },
-  { name: 'Services', to: 'services' },
-]
 
 function XIcon(props) {
   return (
@@ -70,26 +59,18 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logomark className="h-8 sm:hidden" invert={invert} />
-          <Logo className="hidden h-8 sm:block" invert={invert} />
+          <Logomark
+            className="h-8 sm:hidden"
+            invert={invert}
+          />
+          <Logo
+            className="hidden h-8 sm:block"
+            invert={invert}
+          />
         </Link>
-
         <div className="flex items-center gap-x-8">
-          <div className="hidden sm:flex sm:gap-x-12">
-            {navigation.map((item) => (
-              <ScrollLink
-                key={item.name}
-                to={item.to}
-                smooth={true}
-                duration={500}
-                className="text-sm/6 font-semibold text-gray-900"
-              >
-                {item.name}
-              </ScrollLink>
-            ))}
-          </div>
           <Button href="/contact" invert={invert}>
-            Contact
+            Contact us
           </Button>
           <button
             ref={toggleRef}
@@ -98,7 +79,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition sm:hidden',
+              'group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
@@ -144,11 +125,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Work</NavigationItem>
-        <NavigationItem href="/about">About</NavigationItem>
+        <NavigationItem href="/work">Our Work</NavigationItem>
+        <NavigationItem href="/about">About Us</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Services</NavigationItem>
+        <NavigationItem href="/process">Our Process</NavigationItem>
+        <NavigationItem href="/blog">Blog</NavigationItem>
       </NavigationRow>
     </nav>
   )
