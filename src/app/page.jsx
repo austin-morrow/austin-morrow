@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { Squares2X2Icon, CodeBracketSquareIcon, CircleStackIcon } from '@heroicons/react/24/outline'
 import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import { loadCaseStudies } from '@/lib/mdx'
@@ -51,21 +51,21 @@ const features = [
     description:
       'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
     href: '#',
-    icon: InboxIcon,
+    icon: Squares2X2Icon,
   },
   {
     name: 'Development',
     description:
       'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
     href: '#',
-    icon: UsersIcon,
+    icon: CodeBracketSquareIcon,
   },
   {
     name: 'Hosting',
     description:
       'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
     href: '#',
-    icon: TrashIcon,
+    icon: CircleStackIcon,
   },
 ]
 
@@ -254,56 +254,6 @@ export function About() {
   )
 }
 
-// function Services() {
-//   return (
-//     <>
-//       <SectionIntro
-//         eyebrow="Services"
-//         title="We help you identify, explore and respond to new opportunities."
-//         className="mt-24 sm:mt-32 lg:mt-40"
-//       >
-//         <p>
-//           As long as those opportunities involve giving us money to re-purpose
-//           old projects — we can come up with an endless number of those.
-//         </p>
-//       </SectionIntro>
-//       <Container className="mt-16">
-//         <div className="lg:flex lg:items-center lg:justify-end">
-//           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-//             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-//               <StylizedImage
-//                 src={imageLaptop}
-//                 sizes="(min-width: 1024px) 41rem, 31rem"
-//                 className="justify-center lg:justify-end"
-//               />
-//             </FadeIn>
-//           </div>
-//           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-//             <ListItem title="Web development">
-//               We specialise in crafting beautiful, high quality marketing pages.
-//               The rest of the website will be a shell that uses lorem ipsum
-//               everywhere.
-//             </ListItem>
-//             <ListItem title="Application development">
-//               We have a team of skilled developers who are experts in the latest
-//               app frameworks, like Angular 1 and Google Web Toolkit.
-//             </ListItem>
-//             <ListItem title="E-commerce">
-//               We are at the forefront of modern e-commerce development. Which
-//               mainly means adding your logo to the Shopify store template we’ve
-//               used for the past six years.
-//             </ListItem>
-//             <ListItem title="Custom content management">
-//               At Studio we understand the importance of having a robust and
-//               customised CMS. That’s why we run all of our client projects out
-//               of a single, enormous Joomla instance.
-//             </ListItem>
-//           </List>
-//         </div>
-//       </Container>
-//     </>
-//   )
-// }
 
 function Services() {
   return (
@@ -311,7 +261,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            Stay on top of customer support
+            Services
           </h2>
           <p className="mt-6 text-lg/8 text-gray-600">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
@@ -323,18 +273,13 @@ function Services() {
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="text-base/7 font-semibold text-gray-900">
-                  <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-gray-600">
                     <feature.icon aria-hidden="true" className="size-6 text-white" />
                   </div>
                   {feature.name}
                 </dt>
                 <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
-                    <a href={feature.href} className="text-sm/6 font-semibold text-indigo-600">
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </p>
                 </dd>
               </div>
             ))}
@@ -375,9 +320,7 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
+        Austin did a fantastic job on our website for Centurion Maintenance Inc. The lightning fast time frame and organization was well completed by Austin. We at Centurion Maintenance Inc. are very pleased and look forward to adding more information and pictures in the near future. We appreciate his time and efforts.
       </Testimonial>
 
       <Services />

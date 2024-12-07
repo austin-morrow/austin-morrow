@@ -23,6 +23,12 @@ import { SocialMedia } from '@/components/SocialMedia'
 
 const RootLayoutContext = createContext(null)
 
+const navigation = [
+  { name: 'Work', href: '#' },
+  { name: 'About', href: '#' },
+  { name: 'Services', href: '#' },
+]
+
 function XIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -48,7 +54,7 @@ function Header({
   toggleRef,
   invert = false,
 }) {
-  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
+  let { setLogoHovered } = useContext(RootLayoutContext)
 
   return (
     <Container>
@@ -59,18 +65,23 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logomark
-            className="h-8 sm:hidden"
-            invert={invert}
-          />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-          />
+          <Logomark className="sm:hidden" invert={invert} />
+          <Logo className="hidden sm:block" invert={invert} />
         </Link>
         <div className="flex items-center gap-x-8">
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm/6 font-semibold text-gray-900"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
           <Button href="/contact" invert={invert}>
-            Contact us
+            Contact
           </Button>
           <button
             ref={toggleRef}
@@ -79,7 +90,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
+              'group -m-2.5 rounded-full p-2.5 transition lg:hidden',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
@@ -109,11 +120,33 @@ function NavigationRow({ children }) {
   )
 }
 
+function NavigationLongRow({ children }) {
+  return (
+    <div className="even:mt-px sm:bg-neutral-950">
+      <Container>
+        <div className="grid grid-cols-1">{children}</div>
+      </Container>
+    </div>
+  )
+}
+
 function NavigationItem({ href, children }) {
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
+      className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
+    >
+      {children}
+      <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
+    </Link>
+  )
+}
+
+function NavigationLongItem({ href, children }) {
+  return (
+    <Link
+      href={href}
+      className="group relative isolate -mx-6 bg-neutral-950 pl-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
       <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
@@ -125,13 +158,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/work">Work</NavigationItem>
+        <NavigationItem href="/about">About</NavigationItem>
       </NavigationRow>
-      <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
-      </NavigationRow>
+      <NavigationLongRow>
+        <NavigationLongItem href="/process">Services</NavigationLongItem>
+      </NavigationLongRow>
     </nav>
   )
 }

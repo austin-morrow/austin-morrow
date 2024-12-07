@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { GridPattern } from '@/components/GridPattern'
+import Logo from '@/images/clients/centurion-maintenance/logo.png'
 
 export function Testimonial({ children, client, className }) {
   return (
@@ -25,8 +26,16 @@ export function Testimonial({ children, client, className }) {
                 {children}
               </p>
             </blockquote>
-            <figcaption className="mt-10">
-              <Image src={client.logo} alt={client.name} unoptimized />
+            <figcaption className="mt-10 flex items-center gap-x-6">
+            <Image
+            alt=""
+            src={Logo}
+            className="size-12 rounded-full bg-gray-50"
+          />
+          <div className="text-sm/6">
+            <div className="font-semibold text-gray-900">Dennis White</div>
+            <div className="mt-0.5 text-gray-600">Centurion Maintenance Inc.</div>
+          </div>
             </figcaption>
           </figure>
         </FadeIn>
