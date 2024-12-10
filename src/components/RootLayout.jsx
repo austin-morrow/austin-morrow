@@ -9,6 +9,8 @@ import {
   useState,
 } from 'react'
 import Link from 'next/link'
+import { Link as ScrollLink } from 'react-scroll'
+
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
@@ -24,9 +26,9 @@ import { SocialMedia } from '@/components/SocialMedia'
 const RootLayoutContext = createContext(null)
 
 const navigation = [
-  { name: 'Work', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Services', href: '#' },
+  { name: 'Work', to: 'work' },
+  { name: 'About', to: 'about' },
+  { name: 'Services', to: 'services' },
 ]
 
 function XIcon(props) {
@@ -71,18 +73,24 @@ function Header({
         <div className="flex items-center gap-x-8">
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a
+              <ScrollLink
+                smooth={true}
+                duration={500}
                 key={item.name}
-                href={item.href}
-                className="text-sm/6 font-semibold text-gray-900"
+                to={item.to}
+                className="cursor-pointer text-sm/6 font-semibold text-gray-900"
               >
                 {item.name}
-              </a>
+              </ScrollLink>
             ))}
           </div>
-          <Button href="/contact" invert={invert}>
+          <ScrollLink
+          smooth={true}
+          duration={500}>
+          <Button to="/contact" invert={invert}>
             Contact
           </Button>
+          </ScrollLink>
           <button
             ref={toggleRef}
             type="button"
@@ -146,7 +154,7 @@ function NavigationLongItem({ href, children }) {
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-neutral-950 pl-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
+      className="group relative isolate -mx-6 bg-neutral-950 py-10 pl-6 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
       <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
