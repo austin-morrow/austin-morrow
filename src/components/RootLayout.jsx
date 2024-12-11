@@ -84,12 +84,10 @@ function Header({
               </ScrollLink>
             ))}
           </div>
-          <ScrollLink
-          smooth={true}
-          duration={500}>
-          <Button to="/contact" invert={invert}>
-            Contact
-          </Button>
+          <ScrollLink smooth={true} duration={500}>
+            <Button to="/contact" invert={invert}>
+              Contact
+            </Button>
           </ScrollLink>
           <button
             ref={toggleRef}
@@ -138,27 +136,27 @@ function NavigationLongRow({ children }) {
   )
 }
 
-function NavigationItem({ href, children }) {
+function NavigationItem({ to, children }) {
   return (
-    <Link
-      href={href}
+    <ScrollLink
+      to={to}
       className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
       <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
-    </Link>
+    </ScrollLink>
   )
 }
 
-function NavigationLongItem({ href, children }) {
+function NavigationLongItem({ to, children }) {
   return (
-    <Link
-      href={href}
+    <ScrollLink
+      to={to}
       className="group relative isolate -mx-6 bg-neutral-950 py-10 pl-6 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
       <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
-    </Link>
+    </ScrollLink>
   )
 }
 
@@ -166,11 +164,11 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Work</NavigationItem>
-        <NavigationItem href="/about">About</NavigationItem>
+        <NavigationItem to="work">Work</NavigationItem>
+        <NavigationItem to="about">About</NavigationItem>
       </NavigationRow>
       <NavigationLongRow>
-        <NavigationLongItem href="/process">Services</NavigationLongItem>
+        <NavigationLongItem to="services">Services</NavigationLongItem>
       </NavigationLongRow>
     </nav>
   )
