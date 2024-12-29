@@ -53,7 +53,7 @@ export function ContactSection() {
               <iframe
                 ref={iframeRef}
                 id="moxie-discovery-form---new-website"
-                allowTransparency="true"
+                allowtransparency="true"
                 className="m-0 w-full border-0 p-0"
                 style={{ height: '850px' }} // Initial height
               ></iframe>

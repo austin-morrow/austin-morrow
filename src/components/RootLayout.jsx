@@ -139,6 +139,8 @@ function NavigationLongRow({ children }) {
 function NavigationItem({ to, children }) {
   return (
     <ScrollLink
+      smooth={true} 
+      duration={500}
       to={to}
       className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
@@ -151,6 +153,8 @@ function NavigationItem({ to, children }) {
 function NavigationLongItem({ to, children }) {
   return (
     <ScrollLink
+      smooth={true} 
+      duration={500}
       to={to}
       className="group relative isolate -mx-6 bg-neutral-950 py-10 pl-6 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
@@ -199,13 +203,24 @@ function RootLayoutInner({ children }) {
     }
   }, [])
 
+  useEffect(() => {
+    if (navRef.current) {
+      if (expanded) {
+        
+        navRef.current.removeAttribute('inert');
+      } else {
+        navRef.current.setAttribute('inert', '');
+      }
+    }
+  }, [expanded]);
+  
+
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
       <header>
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
           aria-hidden={expanded ? 'true' : undefined}
-          inert={expanded ? '' : undefined}
         >
           <Header
             panelId={panelId}
@@ -227,7 +242,6 @@ function RootLayoutInner({ children }) {
           style={{ height: expanded ? 'auto' : '0.5rem' }}
           className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
           aria-hidden={expanded ? undefined : 'true'}
-          inert={expanded ? undefined : ''}
         >
           <motion.div layout className="bg-neutral-800">
             <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
