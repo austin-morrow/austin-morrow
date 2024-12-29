@@ -15,12 +15,6 @@ import { loadCaseStudies } from '@/lib/mdx'
 
 import clsx from 'clsx'
 
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  XIcon,
-} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.png'
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -75,51 +69,71 @@ const features = [
 export function SelectedWork() {
   return (
     <section name="work">
-   
-   <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:py-32">
-  <div className="mx-auto max-w-7xl px-6 lg:px-8">
-    <p className="mx-auto mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-      Selected Work
-    </p>
-    {/* Responsive grid */}
-    <div className="mt-8 grid gap-6 sm:mt-12 grid-cols-1 lg:grid-cols-2 lg:grid-rows-3">
-      {/* Project 1 */}
-      <div className="relative lg:col-start-1 lg:row-start-1 lg:row-span-1 min-h-[16rem] lg:min-h-[17rem]">
-        <div className="absolute inset-px rounded-lg bg-white"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
-          <p className="text-lg font-medium tracking-tight text-gray-950">Project 1</p>
+      <div className="mt-64 rounded-4xl bg-neutral-950 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="mx-auto mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Selected Work
+          </p>
+          {/* Responsive grid */}
+          <div className="mt-8 grid grid-cols-1 gap-10 sm:mt-12 lg:grid-cols-2 lg:grid-rows-3">
+            {/* Project 1 */}
+            <div className="relative min-h-[16rem] lg:col-start-1 lg:row-span-1 lg:row-start-1 lg:min-h-[17rem]">
+              <div className="absolute inset-px rounded-lg bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
+                <p className="text-lg font-medium tracking-tight text-gray-950">
+                  Project 1
+                </p>
+              </div>
+              <div className="flex justify-between text-sm text-white">
+                <span>Kentucky Senior Health</span>
+                <span>Landing page</span>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="relative min-h-[16rem] lg:col-start-1 lg:row-span-1 lg:row-start-2 lg:min-h-[17rem]">
+              <div className="absolute inset-px rounded-lg bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
+                <p className="text-lg font-medium tracking-tight text-gray-950">
+                  Project 2
+                </p>
+              </div>
+              <div className="flex justify-between text-sm text-white">
+                <span>Marissa Morrow Photography</span>
+                <span>Portfolio website</span>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="relative min-h-[16rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:min-h-[27rem]">
+              <div className="absolute inset-px rounded-lg bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
+                <p className="text-lg font-medium tracking-tight text-gray-950">
+                  Project 3
+                </p>
+              </div>
+              <div className="flex justify-between text-sm text-white">
+                <span>Triple L Transport</span>
+                <span>Small business website</span>
+              </div>
+            </div>
+
+            {/* Project 4 */}
+            <div className="relative min-h-[16rem] lg:col-span-2 lg:row-start-3 lg:min-h-[17rem]">
+              <div className="absolute inset-0 rounded-lg bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden p-6">
+                <p className="text-lg font-medium tracking-tight text-gray-950">
+                  Project 4
+                </p>
+              </div>
+              <div className="flex justify-between text-sm text-white">
+                <span>Morrow Manor Photagraphy</span>
+                <span>Portfolio website</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Project 2 */}
-      <div className="relative lg:col-start-1 lg:row-start-2 lg:row-span-1 min-h-[16rem] lg:min-h-[17rem]">
-        <div className="absolute inset-px rounded-lg bg-white"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
-          <p className="text-lg font-medium tracking-tight text-gray-950">Project 2</p>
-        </div>
-      </div>
-
-      {/* Project 3 */}
-      <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2 min-h-[16rem] lg:min-h-[27rem]">
-        <div className="absolute inset-px rounded-lg bg-white"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-6">
-          <p className="text-lg font-medium tracking-tight text-gray-950">Project 3</p>
-        </div>
-      </div>
-
-      {/* Project 4 */}
-      <div className="relative lg:col-span-2 lg:row-start-3 min-h-[16rem] lg:min-h-[17rem]">
-        <div className="absolute inset-0 rounded-lg bg-white"></div>
-        <div className="relative flex h-full flex-col overflow-hidden p-6">
-          <p className="text-lg font-medium tracking-tight text-gray-950">Project 4</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
     </section>
   )
 }
@@ -130,16 +144,27 @@ export function About() {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-          <div className="max-w-[16rem] px-2.5 lg:max-w-[28rem]">
-  <Image
-    src={portraitImage}
-    alt=""
-    sizes="(min-width: 1024px) 32rem, 20rem"
-    className="aspect-[2/3] bg-zinc-100 object-cover border-2 border-black"
-  />
-</div>
+            <div className="max-w-[16rem] px-2.5 text-center lg:max-w-[28rem]">
+              <Image
+                src={portraitImage}
+                alt=""
+                sizes="(min-width: 1024px) 32rem, 20rem"
+                className="aspect-[2/3] border-2 border-black bg-zinc-100 object-cover"
+              />
 
+              <div className="mt-4 flex justify-between text-sm text-gray-700">
+            
+                <div className="flex flex-col items-start">
+                  <span>Email</span>
+                  <span>austinmorrowdev@gmail.com</span>
+                </div>
 
+                <div className="flex flex-col items-end">
+                  <span>Phone</span>
+                  <span>720.797.5320</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
