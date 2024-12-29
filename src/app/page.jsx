@@ -130,14 +130,16 @@ export function About() {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-            <div className="max-w-xs px-2.5 lg:max-w-none">
-              <Image
-                src={portraitImage}
-                alt=""
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rounded-2xl bg-zinc-100 object-cover"
-              />
-            </div>
+          <div className="max-w-[16rem] px-2.5 lg:max-w-[28rem]">
+  <Image
+    src={portraitImage}
+    alt=""
+    sizes="(min-width: 1024px) 32rem, 20rem"
+    className="aspect-[2/3] bg-zinc-100 object-cover border-2 border-black"
+  />
+</div>
+
+
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
@@ -169,29 +171,6 @@ export function About() {
                 ground.
               </p>
             </div>
-          </div>
-          <div className="lg:pl-20">
-            <ul role="list">
-              <SocialLink href="#" icon={XIcon}>
-                Follow on X
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
-              </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href="mailto:spencer@planetaria.tech"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8"
-              >
-                spencer@planetaria.tech
-              </SocialLink>
-            </ul>
           </div>
         </div>
       </Container>

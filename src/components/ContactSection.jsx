@@ -47,7 +47,7 @@ export function ContactSection() {
   return (
     <section name="contact">
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
+        <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 sm:mx-0 sm:pb-16 md:px-12">
           <div className="mx-auto max-w-4xl">
             <div className="min-h-[500px] w-full">
               <iframe
@@ -55,7 +55,7 @@ export function ContactSection() {
                 id="moxie-discovery-form---new-website"
                 allowTransparency="true"
                 className="m-0 w-full border-0 p-0"
-                style={{ height: '500px' }} // Initial height
+                style={{ height: '850px' }} // Initial height
               ></iframe>
             </div>
           </div>
