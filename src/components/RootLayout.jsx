@@ -84,8 +84,8 @@ function Header({
               </ScrollLink>
             ))}
           </div>
-          <ScrollLink smooth={true} duration={500}>
-            <Button to="/contact" invert={invert}>
+          <ScrollLink smooth={true} duration={500} to="contact">
+            <Button invert={invert}>
               Contact
             </Button>
           </ScrollLink>
