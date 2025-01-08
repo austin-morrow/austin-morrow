@@ -13,55 +13,34 @@ import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import { loadCaseStudies } from '@/lib/mdx'
 
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from '@headlessui/react'
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
+
 import clsx from 'clsx'
 
 import portraitImage from '@/images/portrait.png'
 
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
-
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
-}
-
-const features = [
+const services = [
   {
-    name: 'Layout',
+    service: 'Layout',
     description:
-      'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
-    href: '#',
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
     icon: Squares2X2Icon,
   },
   {
-    name: 'Development',
+    service: 'Development',
     description:
-      'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
-    href: '#',
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
     icon: CodeBracketSquareIcon,
   },
   {
-    name: 'Hosting',
+    service: 'Hosting',
     description:
-      'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
-    href: '#',
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
     icon: CircleStackIcon,
   },
 ]
@@ -153,7 +132,6 @@ export function About() {
               />
 
               <div className="mt-4 flex justify-between text-sm text-gray-700">
-            
                 <div className="flex flex-col items-start">
                   <span>Email</span>
                   <span>austinmorrowdev@gmail.com</span>
@@ -206,36 +184,62 @@ export function About() {
 function Services() {
   return (
     <section name="services">
-      <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Services
-            </h2>
-            <p className="mt-6 text-lg/8 text-gray-600">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              {features.map((feature) => (
-                <div key={feature.name} className="flex flex-col">
-                  <dt className="text-base/7 font-semibold text-gray-900">
-                    <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-gray-600">
-                      <feature.icon
-                        aria-hidden="true"
-                        className="size-6 text-white"
-                      />
-                    </div>
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-600">
-                    <p className="flex-auto">{feature.description}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
+      <div className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-5">
+              <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+                Services
+              </h2>
+              <p className="mt-4 text-pretty text-base/7 text-gray-600">
+                Lorem ipsum dolor sit amet consect adipisicing elit. Magnam
+                voluptatum cupiditate veritatis.{' '}
+              </p>
+              {/* Change to a Link for changing page */}
+              <button
+                type="button"
+                className="mt-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Pricing
+              </button>
+            </div>
+            <div className="mt-10 lg:col-span-7 lg:mt-0">
+              <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
+                {services.map((services) => (
+                  <Disclosure key={services.service} as="div" className="pt-6">
+                    <dt>
+                      <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
+                        <div className="flex items-center space-x-4">
+                          <services.icon
+                            aria-hidden="true"
+                            className="size-6 text-black"
+                          />
+                          <span className="text-base/7 font-semibold">
+                            {services.service}
+                          </span>
+                        </div>
+
+                        <span className="ml-6 flex h-7 items-center">
+                          <PlusSmallIcon
+                            aria-hidden="true"
+                            className="size-6 group-data-[open]:hidden"
+                          />
+                          <MinusSmallIcon
+                            aria-hidden="true"
+                            className="size-6 group-[&:not([data-open])]:hidden"
+                          />
+                        </span>
+                      </DisclosureButton>
+                    </dt>
+                    <DisclosurePanel as="dd" className="mt-2 pr-12">
+                      <p className="text-base/7 text-gray-600">
+                        {services.description}
+                      </p>
+                    </DisclosurePanel>
+                  </Disclosure>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </div>
