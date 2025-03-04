@@ -57,6 +57,7 @@ function Header({
   invert = false,
 }) {
   let { setLogoHovered } = useContext(RootLayoutContext)
+  let pathname = usePathname()
 
   return (
     <Container>
@@ -72,23 +73,32 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <ScrollLink
-                smooth={true}
-                duration={500}
-                key={item.name}
-                to={item.to}
+            {pathname === '/pricing' ? (
+              <Link
+                href="/"
                 className="cursor-pointer text-sm/6 font-semibold text-gray-900"
               >
-                {item.name}
-              </ScrollLink>
-            ))}
+                Home
+              </Link>
+            ) : (
+              navigation.map((item) => (
+                <ScrollLink
+                  smooth={true}
+                  duration={500}
+                  key={item.name}
+                  to={item.to}
+                  className="cursor-pointer text-sm/6 font-semibold text-gray-900"
+                >
+                  {item.name}
+                </ScrollLink>
+              ))
+            )}
           </div>
-          <ScrollLink smooth={true} duration={500} to="contact">
-            <Button invert={invert}>
-              Contact
-            </Button>
-          </ScrollLink>
+          {pathname !== '/pricing' && (
+            <ScrollLink smooth={true} duration={500} to="contact">
+              <Button invert={invert}>Contact</Button>
+            </ScrollLink>
+          )}
           <button
             ref={toggleRef}
             type="button"
@@ -139,7 +149,7 @@ function NavigationLongRow({ children }) {
 function NavigationItem({ to, children }) {
   return (
     <ScrollLink
-      smooth={true} 
+      smooth={true}
       duration={500}
       to={to}
       className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
@@ -153,7 +163,7 @@ function NavigationItem({ to, children }) {
 function NavigationLongItem({ to, children }) {
   return (
     <ScrollLink
-      smooth={true} 
+      smooth={true}
       duration={500}
       to={to}
       className="group relative isolate -mx-6 bg-neutral-950 py-10 pl-6 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
@@ -206,14 +216,12 @@ function RootLayoutInner({ children }) {
   useEffect(() => {
     if (navRef.current) {
       if (expanded) {
-        
-        navRef.current.removeAttribute('inert');
+        navRef.current.removeAttribute('inert')
       } else {
-        navRef.current.setAttribute('inert', '');
+        navRef.current.setAttribute('inert', '')
       }
     }
-  }, [expanded]);
-  
+  }, [expanded])
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>

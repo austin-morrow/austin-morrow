@@ -3,7 +3,6 @@
 // import { Container } from '@/components/Container'
 // import { Logo } from '@/components/Logo'
 
-
 // export function Footer() {
 //   return (
 //     <Container as="footer" className="mt-4 w-full sm:mt-6 lg:mt-8">
@@ -25,28 +24,11 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Automation', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
   support: [
-    { name: 'Submit ticket', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-  ],
-  company: [
+    { name: 'Work', href: '#' },
     { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-  ],
-  legal: [
-    { name: 'Terms of service', href: '#' },
-    { name: 'Privacy policy', href: '#' },
-    { name: 'License', href: '#' },
+    { name: 'Services', href: '#' },
+    { name: 'Contact', href: '#' },
   ],
   social: [
     {
@@ -83,70 +65,47 @@ export function Footer() {
     <section>
       <Container as="footer" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 sm:mx-0 sm:pb-16 md:px-12">
-          <div className="mx-auto max-w-4xl">
-          <div className="mt-24 border-t border-gray-900/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            alt="Company name"
-            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-            className="h-9"
-          />
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-950">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold text-gray-950">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-950">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-12 border-t border-white pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex gap-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-white hover:text-gray-300">
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="size-6" />
-              </a>
-            ))}
-          </div>
-          <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-            &copy; 2025 Austin Morrow. All rights reserved.
-          </p>
-        </div>
-          </div>
+        <div className="mx-auto max-w-4xl">
+  <div className="mt-24 border-t border-gray-900/10 pt-12 xl:flex xl:items-center xl:justify-between">
+    <img
+      alt="Company name"
+      src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+      className="h-9"
+    />
+    <div className="mt-10 xl:mt-0">
+      <ul role="list" className="flex space-x-4">
+        {navigation.support.map((item) => (
+          <li key={item.name}>
+            <a
+              href={item.href}
+              className="text-sm/6 text-gray-600 hover:text-gray-900"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div className="mt-12 border-t border-white pt-8 md:flex md:items-center md:justify-between">
+    <div className="flex gap-x-6 md:order-2">
+      {navigation.social.map((item) => (
+        <a
+          key={item.name}
+          href={item.href}
+          className="text-white hover:text-gray-300"
+        >
+          <span className="sr-only">{item.name}</span>
+          <item.icon aria-hidden="true" className="size-6" />
+        </a>
+      ))}
+    </div>
+    <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
+      &copy; 2025 Austin Morrow. All rights reserved.
+    </p>
+  </div>
+</div>
+
         </FadeIn>
       </Container>
     </section>

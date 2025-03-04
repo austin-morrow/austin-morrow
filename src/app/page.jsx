@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import {
-  Squares2X2Icon,
+  MagnifyingGlassIcon,
   CodeBracketSquareIcon,
   CircleStackIcon,
 } from '@heroicons/react/24/outline'
@@ -25,18 +25,11 @@ import {
   PhoneIcon,
 } from '@heroicons/react/24/outline'
 
-
 import clsx from 'clsx'
 
 import portraitImage from '@/images/portrait.png'
 
 const services = [
-  {
-    service: 'Layout',
-    description:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-    icon: Squares2X2Icon,
-  },
   {
     service: 'Development',
     description:
@@ -48,6 +41,12 @@ const services = [
     description:
       'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
     icon: CircleStackIcon,
+  },
+  {
+    service: 'SEO',
+    description:
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+    icon: MagnifyingGlassIcon,
   },
 ]
 
@@ -202,12 +201,14 @@ function Services() {
                 voluptatum cupiditate veritatis.{' '}
               </p>
               {/* Change to a Link for changing page */}
-              <button
-                type="button"
-                className="mt-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Pricing
-              </button>
+              <Link href="/pricing" passHref>
+                <button
+                  type="button"
+                  className="mt-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Pricing
+                </button>
+              </Link>
             </div>
             <div className="mt-10 lg:col-span-7 lg:mt-0">
               <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -465,9 +466,6 @@ export function Contact() {
     </section>
   )
 }
-
-
-
 
 export const metadata = {
   description:
