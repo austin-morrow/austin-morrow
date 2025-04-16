@@ -1,34 +1,19 @@
-// import Link from 'next/link'
-
-// import { Container } from '@/components/Container'
-// import { Logo } from '@/components/Logo'
-
-// export function Footer() {
-//   return (
-//     <Container as="footer" className="mt-4 w-full sm:mt-6 lg:mt-8">
-//         <div className="mb-20 mt-24 flex flex-wrap items-center justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
-//           <Link href="/" aria-label="Home">
-//             <Logo />
-//           </Link>
-//           <p className="text-sm text-neutral-700">
-//             © Austin Morrow {new Date().getFullYear()}
-//           </p>
-//         </div>
-//     </Container>
-//   )
-// }
-
 'use client'
 
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
+import Image from 'next/image'
+import footerLogo from '@/images/logo/secondaryb_w.png'
+import { Link as ScrollLink } from 'react-scroll'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navigation = {
   support: [
-    { name: 'Work', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Services', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Work', to: 'work' },
+    { name: 'About', to: 'about' },
+    { name: 'Services', to: 'services' },
+    { name: 'Contact', to: 'contact' },
   ],
   social: [
     {
@@ -46,7 +31,7 @@ const navigation = {
     },
     {
       name: 'GitHub',
-      href: '#',
+      href: 'W',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -61,51 +46,66 @@ const navigation = {
 }
 
 export function Footer() {
+  let pathname = usePathname()
+
   return (
     <section>
-      <Container as="footer" className="mt-24 sm:mt-32 lg:mt-40">
+      <Container as="footer" className="mb-12 mt-24 sm:mt-32 lg:mt-40">
         <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 sm:mx-0 sm:pb-16 md:px-12">
-        <div className="mx-auto max-w-4xl">
-  <div className="mt-24 border-t border-gray-900/10 pt-12 xl:flex xl:items-center xl:justify-between">
-    <img
-      alt="Company name"
-      src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-      className="h-9"
-    />
-    <div className="mt-10 xl:mt-0">
-      <ul role="list" className="flex space-x-4">
-        {navigation.support.map((item) => (
-          <li key={item.name}>
-            <a
-              href={item.href}
-              className="text-sm/6 text-gray-600 hover:text-gray-900"
-            >
-              {item.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-  <div className="mt-12 border-t border-white pt-8 md:flex md:items-center md:justify-between">
-    <div className="flex gap-x-6 md:order-2">
-      {navigation.social.map((item) => (
-        <a
-          key={item.name}
-          href={item.href}
-          className="text-white hover:text-gray-300"
-        >
-          <span className="sr-only">{item.name}</span>
-          <item.icon aria-hidden="true" className="size-6" />
-        </a>
-      ))}
-    </div>
-    <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-      &copy; 2025 Austin Morrow. All rights reserved.
-    </p>
-  </div>
-</div>
-
+          <div className="mx-auto max-w-4xl">
+            <div className="mt-24 border-t border-gray-900/10 pt-12 xl:flex xl:items-center xl:justify-between">
+              <Image
+                alt="Company name"
+                src={footerLogo}
+                width={200}
+                height={200}
+                className="h-48"
+              />
+              <div className="mt-10 xl:mt-0">
+                <ul role="list" className="flex space-x-12">
+                  {pathname === '/pricing' ? (
+                    <Link
+                      href="/"
+                      className="cursor-pointer text-sm/6 font-semibold text-white"
+                    >
+                      Home
+                    </Link>
+                  ) : (
+                    navigation.support.map((item) => (
+                      <li key={item.name}>
+                        <ScrollLink
+                          smooth={true}
+                          duration={500}
+                          key={item.name}
+                          to={item.to}
+                          className="cursor-pointer text-sm/6 font-semibold text-white"
+                        >
+                          {item.name}
+                        </ScrollLink>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </div>
+            </div>
+            <div className="mt-12 border-t border-white pt-8 md:flex md:items-center md:justify-between">
+              <div className="flex gap-x-6 md:order-2">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white hover:text-gray-300"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon aria-hidden="true" className="size-6" />
+                  </a>
+                ))}
+              </div>
+              <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
+                &copy; 2025 Austin Morrow. All rights reserved.
+              </p>
+            </div>
+          </div>
         </FadeIn>
       </Container>
     </section>
