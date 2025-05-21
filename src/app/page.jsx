@@ -54,7 +54,7 @@ const services = [
 export function SelectedWork() {
   return (
     <section name="work">
-      <div className="mt-64 rounded-4xl bg-neutral-950 py-24 sm:py-32">
+      <div className="mt-64 rounded-4xl bg-[#232323] py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="mx-auto mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Selected Work
@@ -84,8 +84,8 @@ export function SelectedWork() {
                 </p>
               </div>
               <div className="flex justify-between text-sm text-white">
-                <span>Marissa Morrow Photography</span>
-                <span>Portfolio website</span>
+                <span>Triple L Transport</span>
+                <span>Small business website</span>
               </div>
             </div>
 
@@ -98,8 +98,8 @@ export function SelectedWork() {
                 </p>
               </div>
               <div className="flex justify-between text-sm text-white">
-                <span>Triple L Transport</span>
-                <span>Small business website</span>
+                <span>Marissa Morrow Photography</span>
+                <span>Portfolio website</span>
               </div>
             </div>
 
@@ -140,7 +140,7 @@ export function About() {
               <div className="mt-4 flex justify-between text-sm text-gray-700">
                 <div className="flex flex-col items-start">
                   <span>Email</span>
-                  <span>austinmorrowdev@gmail.com</span>
+                  <span>hello.littlebrothercreative@gmail.com</span>
                 </div>
 
                 <div className="flex flex-col items-end">

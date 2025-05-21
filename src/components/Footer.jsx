@@ -51,7 +51,7 @@ export function Footer() {
   return (
     <section>
       <Container as="footer" className="mb-12 mt-24 sm:mt-32 lg:mt-40">
-        <FadeIn className="-mx-6 rounded-4xl bg-neutral-950 px-6 sm:mx-0 sm:pb-16 md:px-12">
+        <FadeIn className="-mx-6 rounded-4xl bg-[#232323] px-6 sm:mx-0 sm:pb-16 md:px-12">
           <div className="mx-auto max-w-4xl">
             <div className="mt-24 border-t border-gray-900/10 pt-12 xl:flex xl:items-center xl:justify-between">
               <Image
@@ -59,7 +59,7 @@ export function Footer() {
                 src={footerLogo}
                 width={200}
                 height={200}
-                className="h-48"
+                className="h-34"
               />
               <div className="mt-10 xl:mt-0">
                 <ul role="list" className="flex space-x-12">
@@ -102,7 +102,7 @@ export function Footer() {
                 ))}
               </div>
               <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-                &copy; 2025 Austin Morrow. All rights reserved.
+                &copy; 2025 Little Brother Creative. All rights reserved.
               </p>
             </div>
           </div>
