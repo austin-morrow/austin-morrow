@@ -3,7 +3,7 @@
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import Image from 'next/image'
-import footerLogo from '@/images/logo/secondaryb_w.png'
+import footerLogo from '@/images/logo/secondary_logodarkmode.png'
 import { Link as ScrollLink } from 'react-scroll'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -102,7 +102,7 @@ export function Footer() {
                 ))}
               </div>
               <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-                &copy; 2025 Little Brother Creative. All rights reserved.
+                &copy; 2025 Austin Morrow. All rights reserved.
               </p>
             </div>
           </div>

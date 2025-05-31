@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
 import primaryLogo from '@/images/logo/logo.png'
-import primaryLogoBW from '@/images/logo/logob_w.png';
+import primaryLogoBW from '@/images/logo/logo_darkmode.png';
 
-import secondaryLogo from '@/images/logo/secondary.png'
-import secondaryLogoBW from '@/images/logo/secondaryb_w.png';
+import secondaryLogo from '@/images/logo/secondary_logo.png'
+import secondaryLogoBW from '@/images/logo/secondary_logodarkmode.png';
 
 
 

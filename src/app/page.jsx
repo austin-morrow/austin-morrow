@@ -21,7 +21,7 @@ import {
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 import {
-  BuildingOffice2Icon,
+  MapPinIcon,
   EnvelopeIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline'
@@ -140,7 +140,7 @@ export function About() {
               <div className="mt-4 flex justify-between text-sm text-gray-700">
                 <div className="flex flex-col items-start">
                   <span>Email</span>
-                  <span>hello.littlebrothercreative@gmail.com</span>
+                  <span>austinmorrowdeve@gmail.com</span>
                 </div>
 
                 <div className="flex flex-col items-end">
@@ -311,15 +311,13 @@ export function Contact() {
                 <div className="flex gap-x-4">
                   <dt className="flex-none">
                     <span className="sr-only">Address</span>
-                    <BuildingOffice2Icon
+                    <MapPinIcon
                       aria-hidden="true"
                       className="h-7 w-6 text-gray-400"
                     />
                   </dt>
                   <dd>
-                    545 Mavis Island
-                    <br />
-                    Chicago, IL 99191
+                    Denver, CO
                   </dd>
                 </div>
                 <div className="flex gap-x-4">
@@ -335,7 +333,7 @@ export function Contact() {
                       href="tel:+1 (555) 234-5678"
                       className="hover:text-gray-900"
                     >
-                      +1 (555) 234-5678
+                    (720) 797-5320
                     </a>
                   </dd>
                 </div>
@@ -391,16 +389,7 @@ export default async function Home() {
 
       <About />
 
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
-      >
-        Austin did a fantastic job on our website for Centurion Maintenance Inc.
-        The lightning fast time frame and organization was well completed by
-        Austin. We at Centurion Maintenance Inc. are very pleased and look
-        forward to adding more information and pictures in the near future. We
-        appreciate his time and efforts.
-      </Testimonial>
+      <Testimonial />
 
       <Services />
 
