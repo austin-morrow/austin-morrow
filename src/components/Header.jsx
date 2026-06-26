@@ -113,11 +113,11 @@ function MobileNavigation(props) {
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/articles">Articles</MobileNavItem>
-            <MobileNavItem href="/projects">Projects</MobileNavItem>
-            <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-            <MobileNavItem href="/uses">Uses</MobileNavItem>
+            <MobileNavItem href="/">About</MobileNavItem>
+            <MobileNavItem href="/portraits">Portraits</MobileNavItem>
+            <MobileNavItem href="/livemusic">Live Music</MobileNavItem>
+            <MobileNavItem href="/creative">Creative</MobileNavItem>
+            <MobileNavItem href="/personal">Personal</MobileNavItem>
           </ul>
         </nav>
       </PopoverPanel>
@@ -151,12 +151,12 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+      <ul className="flex whitespace-nowrap rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        <NavItem href="/">About</NavItem>
+        <NavItem href="/portraits">Portraits</NavItem>
+        <NavItem href="/livemusic">Live Music</NavItem>
+        <NavItem href="/creative">Creative</NavItem>
+        <NavItem href="/personal">Personal</NavItem>
       </ul>
     </nav>
   )
@@ -203,25 +203,18 @@ function AvatarContainer({ className, ...props }) {
   )
 }
 
-function Avatar({ large = false, className, ...props }) {
+function Avatar({ className}) {
   return (
-    <Link
-      href="/"
-      aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
-      {...props}
-    >
       <Image
         src={avatarImage}
         alt=""
-        sizes={large ? '4rem' : '2.25rem'}
+        sizes="2.25rem"
         className={clsx(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9',
+          'h-9 w-9',
         )}
         priority
       />
-    </Link>
   )
 }
 
@@ -229,11 +222,10 @@ export function Header() {
   let isHomePage = usePathname() === '/'
 
   let headerRef = useRef(null)
-  let avatarRef = useRef(null)
   let isInitial = useRef(true)
 
   useEffect(() => {
-    let downDelay = avatarRef.current?.offsetTop ?? 0
+    let downDelay = 0
     let upDelay = 64
 
     function setProperty(property, value) {
@@ -344,7 +336,6 @@ export function Header() {
         {isHomePage && (
           <>
             <div
-              ref={avatarRef}
               className="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"
             />
             <Container
@@ -367,11 +358,6 @@ export function Header() {
                       transform: 'var(--avatar-border-transform)',
                     }}
                   />
-                  <Avatar
-                    large
-                    className="block h-16 w-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
-                  />
                 </div>
               </div>
             </Container>
@@ -392,11 +378,9 @@ export function Header() {
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
                   <AvatarContainer>
                     <Avatar />
                   </AvatarContainer>
-                )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
@@ -411,12 +395,7 @@ export function Header() {
           </Container>
         </div>
       </header>
-      {isHomePage && (
-        <div
-          className="flex-none"
-          style={{ height: 'var(--content-offset)' }}
-        />
-      )}
+   
     </>
   )
 }
