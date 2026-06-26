@@ -58,7 +58,7 @@ function LinkIcon(props) {
 }
 
 export const metadata = {
-  title: 'Projects',
+  title: 'Live Music',
   description: 'Things I’ve made trying to put my dent in the universe.',
 }
 

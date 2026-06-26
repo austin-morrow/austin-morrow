@@ -16,6 +16,9 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 
+import { Inter } from '@next/font/google'
+const inter = Inter({ subsets: ['latin'] })
+
 function CloseIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -113,7 +116,7 @@ function MobileNavigation(props) {
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/">About</MobileNavItem>
+            <MobileNavItem href="/">Home</MobileNavItem>
             <MobileNavItem href="/portraits">Portraits</MobileNavItem>
             <MobileNavItem href="/livemusic">Live Music</MobileNavItem>
             <MobileNavItem href="/creative">Creative</MobileNavItem>
@@ -151,8 +154,8 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex whitespace-nowrap rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/">About</NavItem>
+      <ul className={`flex whitespace-nowrap rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 ${inter.className}`}>
+        <NavItem href="/">Home</NavItem>
         <NavItem href="/portraits">Portraits</NavItem>
         <NavItem href="/livemusic">Live Music</NavItem>
         <NavItem href="/creative">Creative</NavItem>

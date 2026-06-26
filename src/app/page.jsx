@@ -3,13 +3,10 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  XIcon,
-} from '@/components/SocialIcons'
+import { InstagramIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import { Inter } from '@next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -37,9 +34,8 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: 'About',
-  description:
-    ' I’m Austin Morrow. I live in Denver, CO, where I take photos.',
+  title: 'Austin Morrow - Photographer',
+  description: ' I’m Austin Morrow. I live in Denver, CO, where I take photos.',
 }
 
 export default function About() {
@@ -52,16 +48,18 @@ export default function About() {
               src={portraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square bg-zinc-100 object-cover dark:bg-zinc-800"
-              style={{ objectPosition: '50% 60%' }} 
+              className="aspect-3/4 bg-zinc-100 object-cover dark:bg-zinc-800"
+              style={{ objectPosition: '50% 60%' }}
             />
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          <h1 className="font-[Instrument_Serif] text-4xl tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             I’m Austin Morrow. I live in Denver, CO, where I take photos.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div
+            className={`mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 ${inter.className}`}
+          >
             <p>
               I’ve loved making things for as long as I can remember, and wrote
               my first program when I was 6 years old, just two weeks after my
@@ -92,17 +90,16 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-        
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
-            
             <SocialLink
               href="mailto:morrow.austin5@gmail.com"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              className="mt-2 border-t border-zinc-100 pt-4 dark:border-zinc-700/40"
             >
               morrow.austin5@gmail.com
+            </SocialLink>
+
+            <SocialLink href="#" icon={InstagramIcon} className="mt-2">
+              Follow on Instagram
             </SocialLink>
           </ul>
         </div>
